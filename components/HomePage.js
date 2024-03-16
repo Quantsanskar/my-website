@@ -1,15 +1,14 @@
-// components/HomePage.js
+// HomePage.js
 import React from 'react';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
     return (
-        <div>
-            <section className="about-us">
-                <h2>About Us</h2>
-                <p>
-                    Content for the about us section goes here...
-                </p>
-            </section>
+        <div className={styles.hero}>
+            <div className={styles.heroContent}>
+                <h1>Welcome to Our Institution</h1>
+                <p>We believe in nurturing minds and shaping futures.</p>
+            </div>
         </div>
     );
 };
