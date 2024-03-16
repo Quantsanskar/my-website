@@ -1,5 +1,5 @@
-// components/MentorsSection.js
 import React from 'react';
+import styles from './MentorsSection.module.css';
 
 const MentorsSection = () => {
     const mentors = [
@@ -13,28 +13,30 @@ const MentorsSection = () => {
     ];
 
     return (
-        <section className="mentors">
-            <h2>Our Mentors</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Qualification</th>
-                        <th>Experience</th>
-                        <th>Achievements</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {mentors.map((mentor, index) => (
-                        <tr key={index}>
-                            <td>{mentor.name}</td>
-                            <td>{mentor.qualification}</td>
-                            <td>{mentor.experience}</td>
-                            <td>{mentor.achievements}</td>
+        <section className={styles.mentorsSection}>
+            <div className={styles.mentorsContent}>
+                <h2>Our Mentors</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Qualification</th>
+                            <th>Experience</th>
+                            <th>Achievements</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {mentors.map((mentor, index) => (
+                            <tr key={index}>
+                                <td>{mentor.name}</td>
+                                <td>{mentor.qualification}</td>
+                                <td>{mentor.experience}</td>
+                                <td>{mentor.achievements}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </section>
     );
 };
