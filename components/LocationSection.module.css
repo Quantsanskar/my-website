@@ -1,0 +1,13 @@
+/* LocationSection.module.css */
+.locationSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .locationContent {
+    max-width: 800px; /* Adjust based on your content */
+    text-align: center;
+  }
+  
