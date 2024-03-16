@@ -1,4 +1,3 @@
-// components/AdmissionButton.js
 import React from 'react';
 
 const AdmissionButton = () => {
