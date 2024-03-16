@@ -1,0 +1,26 @@
+/* styles/globals.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set default font and colors */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+/* Add more global styles */
