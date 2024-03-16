@@ -1,47 +1,137 @@
-/* components/Navbar.module.css */
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  /* Align menu icon and logo */
+  align-items: center;
+}
+
+.menuIcon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  z-index: 999;
+}
+
+.menuIconBar {
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.menuIconOpen {
+  background-color: transparent;
+}
+
+.menuIconOpen:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.menuIconOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.menuIconOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -3px);
 }
 
 .navList {
-    display: flex;
-    list-style: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navList.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
 }
 
 .navItem {
-    margin-right: 1rem;
+  margin: 0 1rem;
+  position: relative;
 }
 
 .navLink {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  /* Add cursor pointer for better UX */
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f1c40f;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .navLink:hover {
-    color: #f1c40f;
-    transform: scale(1.1);
+  color: #f1c40f;
 }
 
-.navLink::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #f1c40f;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+.navLink:hover::before {
+  transform: scaleX(1);
 }
 
-.navLink:hover::after {
-    transform: scaleX(1);
+.activeLink {
+  background-color: #f1c40f;
+  color: #1a1a1a;
+}
+
+.activeLink::before {
+  display: none;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
