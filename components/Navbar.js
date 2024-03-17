@@ -64,16 +64,16 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      {isOpen && <button className={styles.closeButton} onClick={closeMenu}>Close</button>}
+      {isOpen && <button className={styles.closeButton} onClick={closeMenu}>X</button>}
       {isSignInOpen && (
         <div className={styles.signInOverlay}>
           <div className={styles.signInForm}>
             <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
-            <h2>Sign In</h2>
-            <form>
-              <input type="text" placeholder="Username" />
-              <input type="password" placeholder="Password" />
-              <button type="submit">Sign In</button>
+            <h2 className={styles.signinTitle} >Sign In</h2>
+            <form className={styles.signinForm}>
+              <input type="text" className={styles.signinField} placeholder="Username" />
+              <input type="password" className={styles.signinField} placeholder="Password" />
+              <button type="submit" className={styles.signinSubmit}>Sign In</button>
             </form>
           </div>
         </div>
