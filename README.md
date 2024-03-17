@@ -1,3 +1,3 @@
-Komal:-  Style all the components and add a professional admission form for a coaching institute in the the apply here at the bottom of home page.
+Komal:-  make the sign in page attractive and clean with errorless functionality.
 
 Revant:- Connect to backend asap!!!
