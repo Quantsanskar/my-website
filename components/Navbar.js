@@ -1,9 +1,10 @@
-
+// Navbar.js
 import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -11,6 +12,14 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const toggleSignIn = () => {
+    setIsSignInOpen(!isSignInOpen);
+  };
+
+  const closeSignIn = () => {
+    setIsSignInOpen(false);
   };
 
   const scrollToSection = (id) => {
@@ -49,8 +58,26 @@ const Navbar = () => {
             Join and Apply
           </a>
         </li>
+        <li className={styles.navItem}>
+          <a href="#" className={styles.navLink} onClick={toggleSignIn}>
+            Sign In as Student
+          </a>
+        </li>
       </ul>
       {isOpen && <button className={styles.closeButton} onClick={closeMenu}>Close</button>}
+      {isSignInOpen && (
+        <div className={styles.signInOverlay}>
+          <div className={styles.signInForm}>
+            <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
+            <h2>Sign In</h2>
+            <form>
+              <input type="text" placeholder="Username" />
+              <input type="password" placeholder="Password" />
+              <button type="submit">Sign In</button>
+            </form>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
