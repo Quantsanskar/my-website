@@ -1,10 +1,13 @@
 // Navbar.js
 import React, { useState } from 'react';
-import styles from './Navbar.module.css';
+import SignInForm from '../components/SignInForm';
+import AdminForm from '../components/AdminForm';
+import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isAdminFormOpen, setIsAdminFormOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,6 +23,14 @@ const Navbar = () => {
 
   const closeSignIn = () => {
     setIsSignInOpen(false);
+  };
+
+  const toggleAdminForm = () => {
+    setIsAdminFormOpen(!isAdminFormOpen);
+  };
+
+  const closeAdminForm = () => {
+    setIsAdminFormOpen(false);
   };
 
   const scrollToSection = (id) => {
@@ -63,21 +74,15 @@ const Navbar = () => {
             Sign In as Student
           </a>
         </li>
+        <li className={styles.navItem}>
+          <a href="#" className={styles.navLink} onClick={toggleAdminForm}>
+            Admin Access
+          </a>
+        </li>
       </ul>
       {isOpen && <button className={styles.closeButton} onClick={closeMenu}>X</button>}
-      {isSignInOpen && (
-        <div className={styles.signInOverlay}>
-          <div className={styles.signInForm}>
-            <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
-            <h2 className={styles.signinTitle} >Sign In</h2>
-            <form className={styles.signinForm}>
-              <input type="text" className={styles.signinField} placeholder="Username" />
-              <input type="password" className={styles.signinField} placeholder="Password" />
-              <button type="submit" className={styles.signinSubmit}>Sign In</button>
-            </form>
-          </div>
-        </div>
-      )}
+      <SignInForm isSignInOpen={isSignInOpen} closeSignIn={closeSignIn} />
+      {isAdminFormOpen && <AdminForm isFormOpen={isAdminFormOpen} closeForm={closeAdminForm} />}
     </nav>
   );
 };
