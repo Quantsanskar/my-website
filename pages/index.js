@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import axios from 'axios';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Navbar from '../components/Navbar';
 import CenteredTitle from '../components/CenteredTitle';
@@ -9,7 +10,15 @@ import MentorsSection from '../components/MentorsSection';
 import AdmissionButton from '../components/AdmissionButton';
 import AdmissionForm from '../components/AdmissionForm';
 
+
 const MainPage = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/mymodels/')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
     const [showAdmissionForm, setShowAdmissionForm] = useState(false);
 
     const toggleAdmissionForm = () => {
@@ -20,6 +29,12 @@ const MainPage = () => {
     return (
         <ErrorBoundary>
             <div>
+                {/* <h1>My Django + Next.js App</h1> */}
+                <ul>
+                    {data.map(item => (
+                        <li key={item.id}>{item.name} - {item.description}</li>
+                    ))}
+                </ul>
                 <Navbar />
                 <CenteredTitle />
                 <div
