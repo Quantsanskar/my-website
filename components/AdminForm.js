@@ -1,11 +1,14 @@
 // AdminForm.js
+'use client'
 import React, { useState } from 'react';
+import Attendance from '../components/Attendance';
 import styles from '../styles/AdminForm.module.css';
+import { useRouter } from 'next/navigation';
 
 const AdminForm = ({ isFormOpen, closeForm }) => {
     const [adminUser, setAdminUser] = useState('');
     const [password, setPassword] = useState('');
-
+    const router = useRouter();
     const handleSubmit = (e) => {
         e.preventDefault();
         // Add your logic for handling form submission here
@@ -40,7 +43,7 @@ const AdminForm = ({ isFormOpen, closeForm }) => {
                         required
                     />
                 </div>
-                <button type="submit" className={styles.submitButton}>Submit</button>
+                <button type="submit" className={styles.submitButton} onClick={() => router.push('/attendance')}>Submit</button>
             </form>
         </div>
     );
