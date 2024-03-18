@@ -1,0 +1,185 @@
+/* styles/globals.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Reset default browser styles */
+/* .* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+/* Set default font and colors */
+/* Update global styles for dark theme */
+/* styles/globals.css */
+
+/* Set dark theme colors */
+.body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    /* Light text color */
+    background-color: #121212;
+    /* Dark background color */
+}
+
+/* Update navbar styles */
+.navbar {
+    background-color: #333;
+    /* Dark navbar background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Dark shadow */
+}
+
+/* Update navbar link styles */
+.navLink {
+    color: #fff;
+    /* White link text color */
+}
+
+/* Add hover effect for navbar links */
+.navLink:hover {
+    color: #f1c40f;
+    /* Yellow hover color */
+}
+
+/* Update button styles */
+
+
+.admissionButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    /* Adjust margin top */
+    margin-bottom: 0.5rem;
+    /* Adjust margin bottom */
+}
+
+
+
+
+.admissionButtonContainer {
+    max-width: 600px;
+    /* Adjust as needed */
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    padding: 1.5rem 3rem;
+    /* Adjust padding to increase button size
+    font-size: 1.5rem;
+    /* Adjust font size */
+    background-color: #f1c40f;
+    /* Your button background color */
+    color: #1a1a1a;
+    /* Your button text color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for buttons */
+.button:hover {
+    background-color: #ffdb4d;
+    /* Change button background color on hover */
+}
+
+/* Decrease background light when admission form is open */
+/* Darken background when admission form is open */
+.decreased-light {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Darkened background */
+}
+
+/* Admission form overlay */
+.admissionFormOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admissionFormOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure it's above other content */
+}
+
+/* Admission form container */
+.admissionFormContainer {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Close button */
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Form title */
+.formTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form group */
+.formGroup {
+    margin-bottom: 20px;
+}
+
+/* Form input fields */
+.inputField {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Submit button */
+.submitButton {
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+.submitButton:hover {
+    background-color: #ffdb4d;
+}
