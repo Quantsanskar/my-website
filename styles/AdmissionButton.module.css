@@ -1,0 +1,11 @@
+/* AdmissionButton.module.css */
+
+.admissionButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    /* Adjust margin top */
+    margin-bottom: 0.5rem;
+    /* Adjust margin bottom */
+}

@@ -1,3 +1,4 @@
-Komal:-  Style all the components and add a professional admission form for a coaching institute in the the apply here at the bottom of home page.
+Komal:-  make the sign in page attractive and clean with errorless functionality,
+make the admin access sign in form fancy same as signi form but slighty different colors and theme from signin form
 
 Revant:- Connect to backend asap!!!

@@ -4,18 +4,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Reset default browser styles */
-* {
+/* .* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+} */
 
 /* Set default font and colors */
 /* Update global styles for dark theme */
 /* styles/globals.css */
 
 /* Set dark theme colors */
-body {
+.body {
     font-family: 'Poppins', sans-serif;
     color: #e0e0e0;
     /* Light text color */
@@ -44,13 +44,20 @@ body {
 }
 
 /* Update button styles */
+
+
 .admissionButtonWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    /* Full viewport height */
+    margin-top: 0.5rem;
+    /* Adjust margin top */
+    margin-bottom: 0.5rem;
+    /* Adjust margin bottom */
 }
+
+
+
 
 .admissionButtonContainer {
     max-width: 600px;
@@ -59,9 +66,9 @@ body {
     text-align: center;
 }
 
-button {
+.button {
     padding: 1.5rem 3rem;
-    /* Adjust padding to increase button size */
+    /* Adjust padding to increase button size
     font-size: 1.5rem;
     /* Adjust font size */
     background-color: #f1c40f;
@@ -75,7 +82,7 @@ button {
 }
 
 /* Add hover effect for buttons */
-button:hover {
+.button:hover {
     background-color: #ffdb4d;
     /* Change button background color on hover */
 }
@@ -151,16 +158,14 @@ button:hover {
 }
 
 /* Form input fields */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
+.inputField {
     width: 100%;
-    padding: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
 }
+
 
 /* Submit button */
 .submitButton {
@@ -178,4 +183,3 @@ textarea {
 .submitButton:hover {
     background-color: #ffdb4d;
 }
-

@@ -1,12 +1,12 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center vertically */
+  align-items: center;
+  /* Center vertically */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 25%;
   background-color: #1a1a1a;
   padding: 1rem;
   z-index: 100;
@@ -24,8 +24,10 @@
   justify-content: space-around;
   height: 24px;
   width: 24px;
-  position: relative;
-  z-index: 999;
+  position: absolute; /* Change position to absolute */
+  top: 0; /* Align the menu icon at the top of the header */
+  right: 20px; /* Adjust right position as needed */
+  z-index: 1001; /* Set a higher z-index than the header */
 }
 
 .menuIconBar {
@@ -130,8 +132,13 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 3px;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
+
+.closeButton:hover {
+  color: #111;
+}
+

@@ -1,6 +1,8 @@
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34vh;
+  margin-bottom: 1rem; /* Adjust margin bottom */
+    
   }

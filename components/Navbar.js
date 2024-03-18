@@ -1,9 +1,13 @@
-
+// Navbar.js
 import React, { useState } from 'react';
-import styles from './Navbar.module.css';
+import SignInForm from '../components/SignInForm';
+import AdminForm from '../components/AdminForm';
+import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isAdminFormOpen, setIsAdminFormOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -11,6 +15,22 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const toggleSignIn = () => {
+    setIsSignInOpen(!isSignInOpen);
+  };
+
+  const closeSignIn = () => {
+    setIsSignInOpen(false);
+  };
+
+  const toggleAdminForm = () => {
+    setIsAdminFormOpen(!isAdminFormOpen);
+  };
+
+  const closeAdminForm = () => {
+    setIsAdminFormOpen(false);
   };
 
   const scrollToSection = (id) => {
@@ -49,8 +69,20 @@ const Navbar = () => {
             Join and Apply
           </a>
         </li>
+        <li className={styles.navItem}>
+          <a href="#" className={styles.navLink} onClick={toggleSignIn}>
+            Sign In as Student
+          </a>
+        </li>
+        <li className={styles.navItem}>
+          <a href="#" className={styles.navLink} onClick={toggleAdminForm}>
+            Admin Access
+          </a>
+        </li>
       </ul>
-      {isOpen && <button className={styles.closeButton} onClick={closeMenu}>Close</button>}
+      {isOpen && <button className={styles.closeButton} onClick={closeMenu}>X</button>}
+      <SignInForm isSignInOpen={isSignInOpen} closeSignIn={closeSignIn} />
+      {isAdminFormOpen && <AdminForm isFormOpen={isAdminFormOpen} closeForm={closeAdminForm} />}
     </nav>
   );
 };
