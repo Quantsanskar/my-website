@@ -3,38 +3,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  background-color: #000000; /* Light background color */
-  margin: 8rem 0; /* Set margin top and bottom to 2rem */
+  height: 100vh;
+  /* Full viewport height */
+  background-color: #000000;
+  /* Light background color */
+  margin: 8rem 0;
+  /* Set margin top and bottom to 2rem */
 }
 
 /* Location content container */
 .locationContent {
-  max-width: 800px; /* Adjust based on your content */
-  padding: 2rem; /* Add padding for spacing */
+  max-width: 800px;
+  /* Adjust based on your content */
+  padding: 2rem;
+  /* Add padding for spacing */
   text-align: center;
-  background-color: #b55e5e; /* White background */
-  border-radius: 111px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #b55e5e;
+  /* White background */
+  border-radius: 111px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
 }
 
 /* Location heading */
 .locationHeading {
-  font-size: 2.5rem; /* Large font size */
-  color: #e30202; /* Dark gray text color */
-  margin-bottom: 1.5rem; /* Add spacing below the heading */
+  font-size: 2.5rem;
+  /* Large font size */
+  color: #e30202;
+  /* Dark gray text color */
+  margin-bottom: 1.5rem;
+  /* Add spacing below the heading */
 }
 
 /* Location details */
 .locationDetails {
-  font-size: 1.2rem; /* Medium font size */
-  color: #080808; /* Gray text color */
+  font-size: 1.2rem;
+  /* Medium font size */
+  color: #080808;
+  /* Gray text color */
 }
 
 /* Location image */
 .locationImage {
-  width: 100%; /* Full width */
-  max-width: 400px; /* Adjust based on your image size */
-  border-radius: 8px; /* Rounded corners */
-  margin-top: 2rem; /* Add spacing above the image */
+  width: 100%;
+  /* Full width */
+  max-width: 400px;
+  /* Adjust based on your image size */
+  border-radius: 8px;
+  /* Rounded corners */
+  margin-top: 2rem;
+  /* Add spacing above the image */
 }

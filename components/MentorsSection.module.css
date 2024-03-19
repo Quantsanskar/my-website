@@ -1,39 +1,52 @@
-/* components/MentorsSection.module.css */
+/* Mentors.module.css */
 
-.mentorsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .mentorsGrid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-.mentorCard {
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mentorCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.mentorsSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-  }
-  
-  .mentorsContent {
-    max-width: 800px; /* Adjust based on your content */
+/* Mentors section */
+.mentors {
+    padding: 2rem;
     text-align: center;
-  }
-  
+}
+
+/* Mentors section title */
+.title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+/* Table wrapper for horizontal scrolling */
+.tableWrapper {
+    overflow-x: auto;
+}
+
+/* Mentors table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header and data cells */
+.th,
+.td {
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+/* Table header */
+.th {
+    background-color: #f1c40f;
+}
+
+/* Table row striping */
+.tr:nth-child(even) {
+    background-color: #444;
+}
+
+/* Hover effect on table rows */
+.tr:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease;
+}
