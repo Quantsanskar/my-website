@@ -23,6 +23,7 @@ body {
     /* Dark background color */
 }
 
+
 /* Update navbar styles */
 .navbar {
     background-color: #333;
@@ -48,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 20vh;
     /* Full viewport height */
 }
 
@@ -178,4 +179,3 @@ textarea {
 .submitButton:hover {
     background-color: #ffdb4d;
 }
-
