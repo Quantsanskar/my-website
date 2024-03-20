@@ -16,7 +16,6 @@
   /* Align menu icon and logo */
   align-items: center;
 }
-
 .menuIcon {
   cursor: pointer;
   display: flex;

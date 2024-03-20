@@ -29,6 +29,7 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: #333;
+    padding: 3px;
 }
 
 .signInTitle {
@@ -62,4 +63,27 @@
 
 .submitButton:hover {
     background-color: #ffdb4d;
+}
+.adminFormOverlay {
+    position: relative;
+}
+.formTitle {
+    color: #111;
+}
+.adminForm {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    height: 300px;
+    width: 300px;
+    background: gray;
+    text-align: center;
+}
+.formGroup {
+    width: 80% !important;
+    padding: 4px !important;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
