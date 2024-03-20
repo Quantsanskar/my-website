@@ -142,15 +142,17 @@
 
 .signInOverlay {
   position: relative;
+  left: 55%;
 }
 
 .signInForm {
   position: absolute;
   top: 30%;
-  left: 40%;
-  height: 300px;
+  left: 60%;
+  height: 240px;
   width: 300px;
-  background: gray;
+  border-radius: 10px;
+  background: rgb(235, 233, 233,0.5);
 }
 
 .closeSignIn {
@@ -160,12 +162,14 @@
 
 .signinTitle {
   text-align: center;
-  color: #111;
+  color: black;
+  padding: 10px;
 }
 
 .signinSubmit {
   padding: 5px;
   color: #111;
+  margin-top: 24px;
 }
 
 .signinForm {
@@ -175,8 +179,10 @@
 .signinField {
   width: 80% !important;
   padding: 4px !important;
-  margin-bottom: 10px;
+  margin-top: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
 }
