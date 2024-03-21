@@ -8,11 +8,15 @@
     "static/dKVan5Ur5MyZ82YOdDxZB/_buildManifest.js",
     "static/dKVan5Ur5MyZ82YOdDxZB/_ssgManifest.js"
   ],
+<<<<<<< Updated upstream
   "rootMainFiles": [
     "static/chunks/webpack-eb682b8beb746658.js",
     "static/chunks/fd9d1056-c7082c319cc53ced.js",
     "static/chunks/main-app-592cae108b3148dd.js"
   ],
+=======
+  "rootMainFiles": [],
+>>>>>>> Stashed changes
   "pages": {
     "/": [
       "static/chunks/webpack-eb682b8beb746658.js",
