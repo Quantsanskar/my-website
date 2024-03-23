@@ -1,12 +1,13 @@
 // SignInForm.js
 import React, { useState } from 'react';
 import styles from '../styles/SignInForm.module.css';
+import { useRouter } from 'next/navigation';
 
 const SignInForm = ({ isSignInOpen, closeSignIn }) => {
     if (!isSignInOpen) {
       return null; // Return null if sign-in form is not open
     }
-
+    const router = useRouter();
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle sign-in logic
@@ -23,7 +24,7 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
             <form className={styles.signinForm}>
               <input type="text" className={styles.signinField} placeholder="Username" />
               <input type="password" className={styles.signinField} placeholder="Password" />
-              <button type="submit" className={styles.signinSubmit}>Sign In</button>
+              <button type="submit" className={styles.signinSubmit} onClick={() => router.push('/StudentDashboard')}>Sign In</button>
             </form>
           </div>
         </div>

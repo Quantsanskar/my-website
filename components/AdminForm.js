@@ -1,7 +1,6 @@
 // AdminForm.js
 'use client'
 import React, { useState } from 'react';
-import Attendance from '../components/Attendance';
 import styles from '../styles/AdminForm.module.css';
 import { useRouter } from 'next/navigation';
 
