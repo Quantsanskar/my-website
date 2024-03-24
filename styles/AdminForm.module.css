@@ -1,4 +1,4 @@
-.signInOverlay {
+.adminFormOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,25 +8,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
+    /* Ensure it's above other content */
 }
-
-.signInForm {
+.adminForm {
     background-color: #fff;
-    padding: 30px;
+    padding: 60px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 100%;
     font-family: 'Roboto', sans-serif;
 }
-
-.closeButton {
+.closeButton{
     position: absolute;
     right: 0px;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+<<<<<<< HEAD
     background-color: #f1c40f;
     color: black;
     padding: 3px;
@@ -37,10 +38,17 @@
 
 .signInTitle {
     color: rgba(0, 0, 0, 0);
+=======
+    color: #dccfcf;
+}
+.formTitle {
+>>>>>>> origin/Sanskar_main
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    color: #111;
 }
+<<<<<<< HEAD
 
 .formGroup {
     margin-bottom: 20px;
@@ -55,6 +63,8 @@
     margin-top: 14px;
 }
 
+=======
+>>>>>>> origin/Sanskar_main
 .submitButton {
     background-color: #f1c40f;
     border-radius: 5px;
@@ -67,10 +77,10 @@
     font-weight: 600;
     font-family: 'poppins', sans-serif;
 }
-
 .submitButton:hover {
     background-color: #ffdb4d;
 }
+<<<<<<< HEAD
 .adminFormOverlay {
     position: relative;
 }
@@ -86,4 +96,15 @@
     width: 300px;
     background-color: #757575;
     border-radius: 8px;
+=======
+.inputField {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.formGroup {
+    text-align: center;
+>>>>>>> origin/Sanskar_main
 }

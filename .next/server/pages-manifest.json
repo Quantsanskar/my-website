@@ -3,5 +3,9 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
+<<<<<<< HEAD
+=======
+  "/StudentDashboard": "pages/StudentDashboard.js",
+>>>>>>> origin/Sanskar_main
   "/attendance": "pages/attendance.js"
 }
