@@ -29,7 +29,8 @@
   top: 10px;
   position: absolute; /* Change position to absolute */
   top: 0; /* Align the menu icon at the top of the header */
-  right: 10px; /* Adjust right position as needed */
+  right: 0px; /* Adjust right position as needed */
+  left: 0px;
   z-index: 1001; /* Set a higher z-index than the header */
 }
 
