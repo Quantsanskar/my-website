@@ -48,21 +48,7 @@ eval("// Exports\nmodule.exports = {\n\t\"mentors\": \"MentorsSection_mentors__E
   \*************************************/
 /***/ ((module) => {
 
-<<<<<<< HEAD
-eval("// Exports\nmodule.exports = {\n\t\"signInOverlay\": \"AdminForm_signInOverlay__V6SiA\",\n\t\"signInForm\": \"AdminForm_signInForm__BHpRc\",\n\t\"closeButton\": \"AdminForm_closeButton__HpFVM\",\n\t\"signInTitle\": \"AdminForm_signInTitle__kzdKt\",\n\t\"formGroup\": \"AdminForm_formGroup__lJ3Zm\",\n\t\"inputField\": \"AdminForm_inputField__AhMfg\",\n\t\"submitButton\": \"AdminForm_submitButton__CXvMO\",\n\t\"adminFormOverlay\": \"AdminForm_adminFormOverlay__tLYoj\",\n\t\"formTitle\": \"AdminForm_formTitle__Lqqr0\",\n\t\"adminForm\": \"AdminForm_adminForm__Q4c4H\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdHlsZXMvQWRtaW5Gb3JtLm1vZHVsZS5jc3MiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9teS13ZWJzaXRlLy4vc3R5bGVzL0FkbWluRm9ybS5tb2R1bGUuY3NzPzk1YTgiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwic2lnbkluT3ZlcmxheVwiOiBcIkFkbWluRm9ybV9zaWduSW5PdmVybGF5X19WNlNpQVwiLFxuXHRcInNpZ25JbkZvcm1cIjogXCJBZG1pbkZvcm1fc2lnbkluRm9ybV9fQkhwUmNcIixcblx0XCJjbG9zZUJ1dHRvblwiOiBcIkFkbWluRm9ybV9jbG9zZUJ1dHRvbl9fSHBGVk1cIixcblx0XCJzaWduSW5UaXRsZVwiOiBcIkFkbWluRm9ybV9zaWduSW5UaXRsZV9fa3pkS3RcIixcblx0XCJmb3JtR3JvdXBcIjogXCJBZG1pbkZvcm1fZm9ybUdyb3VwX19sSjNabVwiLFxuXHRcImlucHV0RmllbGRcIjogXCJBZG1pbkZvcm1faW5wdXRGaWVsZF9fQWhNZmdcIixcblx0XCJzdWJtaXRCdXR0b25cIjogXCJBZG1pbkZvcm1fc3VibWl0QnV0dG9uX19DWHZNT1wiLFxuXHRcImFkbWluRm9ybU92ZXJsYXlcIjogXCJBZG1pbkZvcm1fYWRtaW5Gb3JtT3ZlcmxheV9fdExZb2pcIixcblx0XCJmb3JtVGl0bGVcIjogXCJBZG1pbkZvcm1fZm9ybVRpdGxlX19McXFyMFwiLFxuXHRcImFkbWluRm9ybVwiOiBcIkFkbWluRm9ybV9hZG1pbkZvcm1fX1E0YzRIXCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./styles/AdminForm.module.css\n");
-
-/***/ }),
-
-/***/ "./styles/Attendance.module.css":
-/*!**************************************!*\
-  !*** ./styles/Attendance.module.css ***!
-  \**************************************/
-/***/ ((module) => {
-
-eval("// Exports\nmodule.exports = {\n\t\"attendanceContainer\": \"Attendance_attendanceContainer__Zs91W\",\n\t\"attendanceList\": \"Attendance_attendanceList___kOtc\",\n\t\"student\": \"Attendance_student__LvmMV\",\n\t\"button\": \"Attendance_button__MmMYl\",\n\t\"present\": \"Attendance_present__jMG1S\",\n\t\"absent\": \"Attendance_absent__W8PkK\",\n\t\"submitContainer\": \"Attendance_submitContainer__3WtoM\",\n\t\"submitButton\": \"Attendance_submitButton__ziRVA\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdHlsZXMvQXR0ZW5kYW5jZS5tb2R1bGUuY3NzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9teS13ZWJzaXRlLy4vc3R5bGVzL0F0dGVuZGFuY2UubW9kdWxlLmNzcz81NTgzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIEV4cG9ydHNcbm1vZHVsZS5leHBvcnRzID0ge1xuXHRcImF0dGVuZGFuY2VDb250YWluZXJcIjogXCJBdHRlbmRhbmNlX2F0dGVuZGFuY2VDb250YWluZXJfX1pzOTFXXCIsXG5cdFwiYXR0ZW5kYW5jZUxpc3RcIjogXCJBdHRlbmRhbmNlX2F0dGVuZGFuY2VMaXN0X19fa090Y1wiLFxuXHRcInN0dWRlbnRcIjogXCJBdHRlbmRhbmNlX3N0dWRlbnRfX0x2bU1WXCIsXG5cdFwiYnV0dG9uXCI6IFwiQXR0ZW5kYW5jZV9idXR0b25fX01tTVlsXCIsXG5cdFwicHJlc2VudFwiOiBcIkF0dGVuZGFuY2VfcHJlc2VudF9fak1HMVNcIixcblx0XCJhYnNlbnRcIjogXCJBdHRlbmRhbmNlX2Fic2VudF9fVzhQa0tcIixcblx0XCJzdWJtaXRDb250YWluZXJcIjogXCJBdHRlbmRhbmNlX3N1Ym1pdENvbnRhaW5lcl9fM1d0b01cIixcblx0XCJzdWJtaXRCdXR0b25cIjogXCJBdHRlbmRhbmNlX3N1Ym1pdEJ1dHRvbl9femlSVkFcIlxufTtcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./styles/Attendance.module.css\n");
-=======
 eval("// Exports\nmodule.exports = {\n\t\"adminFormOverlay\": \"AdminForm_adminFormOverlay__tLYoj\",\n\t\"adminForm\": \"AdminForm_adminForm__Q4c4H\",\n\t\"closeButton\": \"AdminForm_closeButton__HpFVM\",\n\t\"formTitle\": \"AdminForm_formTitle__Lqqr0\",\n\t\"submitButton\": \"AdminForm_submitButton__CXvMO\",\n\t\"inputField\": \"AdminForm_inputField__AhMfg\",\n\t\"formGroup\": \"AdminForm_formGroup__lJ3Zm\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdHlsZXMvQWRtaW5Gb3JtLm1vZHVsZS5jc3MiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9teS13ZWJzaXRlLy4vc3R5bGVzL0FkbWluRm9ybS5tb2R1bGUuY3NzPzk1YTgiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwiYWRtaW5Gb3JtT3ZlcmxheVwiOiBcIkFkbWluRm9ybV9hZG1pbkZvcm1PdmVybGF5X190TFlvalwiLFxuXHRcImFkbWluRm9ybVwiOiBcIkFkbWluRm9ybV9hZG1pbkZvcm1fX1E0YzRIXCIsXG5cdFwiY2xvc2VCdXR0b25cIjogXCJBZG1pbkZvcm1fY2xvc2VCdXR0b25fX0hwRlZNXCIsXG5cdFwiZm9ybVRpdGxlXCI6IFwiQWRtaW5Gb3JtX2Zvcm1UaXRsZV9fTHFxcjBcIixcblx0XCJzdWJtaXRCdXR0b25cIjogXCJBZG1pbkZvcm1fc3VibWl0QnV0dG9uX19DWHZNT1wiLFxuXHRcImlucHV0RmllbGRcIjogXCJBZG1pbkZvcm1faW5wdXRGaWVsZF9fQWhNZmdcIixcblx0XCJmb3JtR3JvdXBcIjogXCJBZG1pbkZvcm1fZm9ybUdyb3VwX19sSjNabVwiXG59O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./styles/AdminForm.module.css\n");
->>>>>>> origin/Sanskar_main
 
 /***/ }),
 
@@ -249,7 +235,7 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
 
 /***/ }),
 
-/***/ "../../client/components/action-async-storage.external":
+/***/ "./action-async-storage.external?8dda":
 /*!*******************************************************************************!*\
   !*** external "next/dist/client/components/action-async-storage.external.js" ***!
   \*******************************************************************************/
@@ -260,7 +246,7 @@ module.exports = require("next/dist/client/components/action-async-storage.exter
 
 /***/ }),
 
-/***/ "../../client/components/request-async-storage.external":
+/***/ "./request-async-storage.external?3d59":
 /*!********************************************************************************!*\
   !*** external "next/dist/client/components/request-async-storage.external.js" ***!
   \********************************************************************************/
@@ -271,7 +257,7 @@ module.exports = require("next/dist/client/components/request-async-storage.exte
 
 /***/ }),
 
-/***/ "../../client/components/static-generation-async-storage.external":
+/***/ "./static-generation-async-storage.external?16bc":
 /*!******************************************************************************************!*\
   !*** external "next/dist/client/components/static-generation-async-storage.external.js" ***!
   \******************************************************************************************/

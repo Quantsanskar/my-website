@@ -192,11 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = function() { return "8a31bbc2f3766680"; }
-=======
-/******/ 		__webpack_require__.h = function() { return "5fa591e6e8372f1e"; }
->>>>>>> origin/Sanskar_main
+/******/ 		__webpack_require__.h = function() { return "494883c55ca0e96b"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
