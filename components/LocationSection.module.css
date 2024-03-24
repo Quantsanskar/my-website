@@ -18,7 +18,10 @@
   padding: 2rem;
   /* Add padding for spacing */
   text-align: center;
-  background-color: #b55e5e;
+
+  background-color: #ffffff;
+
+
   /* White background */
   border-radius: 111px;
   /* Rounded corners */
@@ -28,9 +31,13 @@
 
 /* Location heading */
 .locationHeading {
-  font-size: 2.5rem;
+  font-family: Marienda;
+  font-size: 50px;
   /* Large font size */
-  color: #e30202;
+
+  color: black;
+
+
   /* Dark gray text color */
   margin-bottom: 1.5rem;
   /* Add spacing below the heading */

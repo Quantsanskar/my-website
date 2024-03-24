@@ -1,6 +1,6 @@
 // AdmissionForm.js
 import React from 'react';
-import styles from '../styles/globals.css';
+
 
 const AdmissionForm = ({ onClose }) => {
     const handleSubmit = (e) => {
