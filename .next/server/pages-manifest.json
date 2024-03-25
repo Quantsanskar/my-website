@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/attendance": "pages/attendance.js",
-  "/StudentDashboard": "pages/StudentDashboard.js"
+  "/studentProfile": "pages/studentProfile.js",
+  "/StudentDashboard": "pages/StudentDashboard.js",
+  "/home": "pages/home.js",
+  "/": "pages/index.js"
 }

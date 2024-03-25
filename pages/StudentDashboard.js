@@ -1,22 +1,32 @@
-// StudentDashboard.js
-import React from 'react';
-import NotesSection from '../components/NotesSection';
-import LecturesSection from '../components/LecturesSection';
-import TestsSection from '../components/TestsSection';
-import StudentAnalysisSection from '../components/StudentAnalysisSection';
+import { useState } from 'react';
+import StudentNavbar from '../components/StudentNavbar';
+import StudentAboutSection from "../components/StudentAboutSection";
+import AdmissionForm from '../components/AdmissionForm';
 
-const StudentDashboard = ({ studentName }) => {
-    return (
+
+const StudentDashboard = () => {
+  const [showAdmissionForm, setShowAdmissionForm] = useState(false);
+
+  const handleContact = () => {
+    setShowAdmissionForm(true);
+  };
+
+  const handleCloseAdmissionForm = () => {
+    setShowAdmissionForm(false);
+  };
+
+  return (
+    <div>
+      <StudentNavbar onContact={handleContact} />
+      {showAdmissionForm ? (
+        <AdmissionForm onClose={handleCloseAdmissionForm} />
+      ) : (
         <div>
-            <h1>Welcome, {studentName}!</h1>
-            <div>
-                <NotesSection />
-                <LecturesSection />
-                <TestsSection />
-                <StudentAnalysisSection />
-            </div>
+          <StudentAboutSection/>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default StudentDashboard;

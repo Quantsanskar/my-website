@@ -1,0 +1,29 @@
+/* AboutSection.module.css */
+
+.aboutContainer {
+    background-color: #f0f0f0;
+    /* Match background color with navbar */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Add shadow effect */
+    margin-top: 20px;
+    /* Spacing from the navbar */
+}
+
+.aboutContent {
+    transition: opacity 0.5s ease;
+    /* Add transition effect */
+}
+
+.aboutContent p {
+    color: #333;
+    /* Text color */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.aboutContent p+p {
+    margin-top: 20px;
+    /* Add spacing between paragraphs */
+}
