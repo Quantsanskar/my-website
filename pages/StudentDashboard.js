@@ -2,6 +2,7 @@ import { useState } from 'react';
 import StudentNavbar from '../components/StudentNavbar';
 import StudentAboutSection from "../components/StudentAboutSection";
 import AdmissionForm from '../components/AdmissionForm';
+import LecturesSection from '../components/LecturesSection';
 
 
 const StudentDashboard = () => {
@@ -23,6 +24,7 @@ const StudentDashboard = () => {
       ) : (
         <div>
           <StudentAboutSection/>
+          <LecturesSection />
         </div>
       )}
     </div>

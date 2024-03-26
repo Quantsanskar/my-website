@@ -1,0 +1,95 @@
+/* LecturesSection.module.css */
+
+.lecturesContainer {
+    margin-top: 40px;
+}
+
+.subjectContainer {
+    border: 2px solid #4caf50;
+    /* Green border */
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    /* Light grey background */
+}
+
+.chapterContainer {
+    margin-top: 30px;
+}
+
+.chapterTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark grey text color */
+}
+
+.videoList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 300px;
+}
+
+.h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+    /* Green text color */
+}
+
+.h3 {
+    margin-top: 40px;
+    font-size: 28px;
+    color: #333;
+    /* Dark grey text color */
+}
+
+.h4 {
+    margin-bottom: 30px;
+    font-size: 22px;
+    color: #4caf50;
+    /* Green text color */
+}
+
+.videoItem {
+    border: 2px solid #ccc;
+    /* Light grey border */
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    /* White background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Light shadow */
+}
+
+.videoTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    /* Dark grey text color */
+}
+
+.videoDescription {
+    font-size: 16px;
+    color: #666;
+    /* Medium grey text color */
+}
+
+.videoLink {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #4caf50;
+    /* Green text color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.videoLink:hover {
+    color: #2e7d32;
+    /* Dark green text color on hover */
+}
+
+/* Add more styles as needed */
