@@ -1,0 +1,50 @@
+/* StudentProfile.module.css */
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Make the profile container full height of the viewport */
+    padding: 20px;
+    background-color: #449879;
+    /* Soft grey color */
+}
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #449879;
+    /* Light grey color */
+    margin-bottom: 20px;
+    /* Add some space below the profile image */
+}
+
+.profileDetails {
+    text-align: center;
+    /* Center align the profile details */
+}
+
+.details {
+    color: #333;
+    /* Text color */
+    /* Add animation */
+    animation-name: slideInFromBottom;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Define animation keyframes */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

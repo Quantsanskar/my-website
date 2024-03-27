@@ -1,7 +1,6 @@
 // AdminForm.js
 'use client'
 import React, { useState } from 'react';
-import Attendance from '../components/Attendance';
 import styles from '../styles/AdminForm.module.css';
 import { useRouter } from 'next/navigation';
 
@@ -14,8 +13,14 @@ const AdminForm = ({ isFormOpen, closeForm }) => {
         // Add your logic for handling form submission here
         console.log('Admin User:', adminUser);
         console.log('Password:', password);
-        // Close the form after submission
-        closeForm();
+        if (adminUser && password) {
+            // Close the form after submission and redirect to dashboard
+            closeForm();
+            router.push('/attendance');
+        } else {
+            // show validation
+        }
+
     };
 
     return (
@@ -43,7 +48,7 @@ const AdminForm = ({ isFormOpen, closeForm }) => {
                         required
                     />
                 </div>
-                <button type="submit" className={styles.submitButton} onClick={() => router.push('/attendance')}>Submit</button>
+                <button type="submit" className={styles.submitButton}>Submit</button>
             </form>
         </div>
     );

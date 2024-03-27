@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AdmissionForm from './AdmissionForm';
+import AdmissionForm from '../components/AdmissionForm';
 
 const AdmissionButton = () => {
     const [isFormOpen, setIsFormOpen] = useState(false);
