@@ -23,7 +23,7 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
             <form className={styles.signinForm}>
               <input type="text" className={styles.signinField} placeholder="Username" />
               <input type="password" className={styles.signinField} placeholder="Password" />
-              <button type="submit" className={styles.signinSubmit}>Sign In</button>
+              <button type="submit" className={styles.signinSubmit} onClick={router.push("/")}>Sign In</button>
             </form>
           </div>
         </div>

@@ -2,17 +2,19 @@
   "polyfillFiles": [
     "static/chunks/polyfills.js"
   ],
-  "devFiles": [],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
+  ],
   "ampDevFiles": [],
   "lowPriorityFiles": [
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js"
   ],
-  "rootMainFiles": [],
+  "rootMainFiles": [
+    "static/chunks/webpack.js",
+    "static/chunks/main-app.js"
+  ],
   "pages": {
-<<<<<<< HEAD
-    "/_app": []
-=======
     "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -27,8 +29,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/attendance": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/attendance.js"
     ]
->>>>>>> parent of d979015 (.next deleted)
   },
   "ampFirstPages": []
 }
