@@ -101,3 +101,4 @@ const LecturesSection = () => {
 };
 
 export default LecturesSection;
+

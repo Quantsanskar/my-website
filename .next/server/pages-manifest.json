@@ -2,6 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/": "pages/index.js",
   "/attendance": "pages/attendance.js"
+=======
+  "/": "pages/index.js"
+>>>>>>> parent of d979015 (.next deleted)
 }
