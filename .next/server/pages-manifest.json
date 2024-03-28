@@ -3,9 +3,15 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "/": "pages/index.js",
   "/attendance": "pages/attendance.js"
 =======
   "/": "pages/index.js"
 >>>>>>> parent of d979015 (.next deleted)
+=======
+  "/": "pages/index.js",
+  "/studentProfile": "pages/studentProfile.js",
+  "/StudentDashboard": "pages/StudentDashboard.js"
+>>>>>>> parent of 4280404 (.next changes)
 }
