@@ -140,7 +140,11 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
+<<<<<<< HEAD
 /******/ 		__webpack_require__.h = function() { return "4cf48c80171ad0f7"; }
+=======
+/******/ 		__webpack_require__.h = function() { return "cff272ee4dec88bd"; }
+>>>>>>> parent of d979015 (.next deleted)
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

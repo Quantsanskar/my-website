@@ -35,7 +35,7 @@ const MainPage = () => {
                         <li key={item.id}>{item.name} - {item.description}</li>
                     ))}
                 </ul>
-                <Navbar/>
+                <Navbar />
                 <CenteredTitle />
                 <div
                     style={{
