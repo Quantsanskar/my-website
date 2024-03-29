@@ -23,8 +23,8 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
         <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
         <h2 className={styles.signinTitle} >Sign In</h2>
         <form className={styles.signinForm}>
-          <input type="text" className={styles.signinField} placeholder="Username" />
-          <input type="password" className={styles.signinField} placeholder="Password" />
+          <input type="text" className={styles.signinField} placeholder="Username" required/>
+          <input type="password" className={styles.signinField} placeholder="Password" required/>
           <button type="submit" className={styles.signinSubmit}>Sign In</button>
           {/* onClick={() => router.push('/StudentDashboard')} */}
         </form>
