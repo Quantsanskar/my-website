@@ -5,16 +5,36 @@ import { useRouter } from 'next/navigation';
 
 const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const router = useRouter();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
   if (!isSignInOpen) {
     return null; // Return null if sign-in form is not open
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle sign-in logic
-    console.log('Username:', username);
-    console.log('Password:', password);
-    onClose(); // Close the sign-in form
+    try {
+      const response = await fetch('/api/authenticate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        // Redirect to student dashboard on successful authentication
+        router.push('/StudentDashboard');
+      } else {
+        setError('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setError('An unexpected error occurred');
+    }
+    closeSignIn(); // Close the sign-in form
   };
 
   return (
@@ -22,12 +42,12 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
       <div className={styles.signInForm}>
         <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
         <h2 className={styles.signinTitle} >Sign In</h2>
-        <form className={styles.signinForm}>
-          <input type="text" className={styles.signinField} placeholder="Username" required/>
-          <input type="password" className={styles.signinField} placeholder="Password" required/>
-          <button type="submit" className={styles.signinSubmit}>Sign In</button>
-          {/* onClick={() => router.push('/StudentDashboard')} */}
+        <form className={styles.signinForm} onSubmit={handleSubmit}>
+          <input type="text" className={styles.signinField} placeholder="Username" required />
+          <input type="password" className={styles.signinField} placeholder="Password" required />
+          <button type="submit" className={styles.signinSubmit} onClick={router.push('/StudentDashboard')}>Sign In</button>
         </form>
+        {error && <p className={styles.error}>{error}</p>}
       </div>
     </div>
   );
