@@ -1,6 +1,6 @@
 // LecturesSection.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import LectureVideo from '../components/LectureVideo'; // Assuming you have a LectureVideo component for displaying individual videos
 import styles from '../styles/LecturesSection.module.css'; // Import CSS module for styling
 
@@ -75,18 +75,39 @@ const LecturesSection = () => {
         },
         // Add more subjects as needed
     ];
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredLectures, setFilteredLectures] = useState(lectures);
 
+    const handleSearch = (e) => {
+        const { value } = e.target;
+        setSearchQuery(value);
+        filterLectures(value);
+    };
+
+    const filterLectures = (query) => {
+        const filtered = lectures.filter((subject) => {
+            const matchingChapters = subject.chapters.filter((chapter) =>
+                chapter.videos.some((video) =>
+                    video.title.toLowerCase().includes(query.toLowerCase())
+                )
+            );
+            return matchingChapters.length > 0;
+        });
+        setFilteredLectures(filtered);
+    };
     return (
         <div className={styles.lecturesContainer}>
             <h2>Lectures</h2>
-            {lectures.map((subject, subjectIndex) => (
+            <input
+                type="text"
+                placeholder="Search by lecture name or chapter"
+                className={styles.searchInput}
+                value={searchQuery}
+                onChange={handleSearch}
+            />
+            {filteredLectures.map((subject, subjectIndex) => (
                 <div key={subjectIndex}>
                     <h3>{subject.subject}</h3>
-                    <input
-                        type="text"
-                        placeholder="Search by lecture name"
-                        className={styles.searchInput}
-                    />
                     <div className={styles.subjectContainer}>
                         {subject.chapters.map((chapter, chapterIndex) => (
                             <div key={chapterIndex} className={styles.chapterContainer}>
