@@ -82,15 +82,10 @@ const LecturesSection = () => {
             {lectures.map((subject, subjectIndex) => (
                 <div key={subjectIndex}>
                     <h3>{subject.subject}</h3>
-                    <input
-                        type="text"
-                        placeholder="Search by lecture name"
-                        className={styles.searchInput}
-                    />
                     <div className={styles.subjectContainer}>
                         {subject.chapters.map((chapter, chapterIndex) => (
                             <div key={chapterIndex} className={styles.chapterContainer}>
-                                <h4 className={styles.chapterName}>{chapter.name}</h4>
+                                <h4>{chapter.name}</h4>
                                 <div className={styles.videoList}>
                                     {chapter.videos.map((video, videoIndex) => (
                                         <LectureVideo key={videoIndex} title={video.title} videoUrl={video.videoUrl} />
@@ -106,3 +101,4 @@ const LecturesSection = () => {
 };
 
 export default LecturesSection;
+

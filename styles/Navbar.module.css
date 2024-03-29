@@ -6,17 +6,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width:15%;
-  background-color: #1a1a1a;
-  
+  width: 25%;
+  padding: 1rem;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   /* Align menu icon and logo */
   align-items: center;
-  padding-left: 40px;
-  padding-right: 0;
 }
 .menuIcon {
   cursor: pointer;
@@ -28,9 +25,6 @@
   margin: 10px;
   top: 10px;
   position: absolute; /* Change position to absolute */
-  top: 0; /* Align the menu icon at the top of the header */
-  right: 0px; /* Adjust right position as needed */
-  left: 0px;
   z-index: 1001; /* Set a higher z-index than the header */
 }
 
@@ -66,7 +60,7 @@
   position: absolute;
   top: 10px;
   left: 0;
-  width: 200%;
+  width: 310px;
   background-color: #1a1a1a;
   padding: 1rem;
   transition: all 0.3s ease;
