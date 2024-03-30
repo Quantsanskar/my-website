@@ -1,0 +1,99 @@
+.container {
+    margin: 20px;
+}
+
+.container h2 {
+
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+}
+
+.searchContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.searchContainer .searchInput {
+    width: 40%;
+    padding: 10px;
+    font-size: 26px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subjectContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subjectSection {
+    margin-bottom: 30px;
+}
+
+.subjectSection h3 {
+    text-align: center;
+    font-family: Marienda;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.subjectSection .notesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.noteItem {
+    cursor: pointer;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 500px;
+    text-align: center;
+}
+
+.noteItem:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noteContainer {
+    background-color: #fff;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: yellow;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.noteContainer .react-pdf__Document {
+    width: 100%;
+    height: 100%;
+}

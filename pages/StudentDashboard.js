@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { React, useState, useRef } from 'react';
 import StudentNavbar from '../components/StudentNavbar';
 import StudentAboutSection from "../components/StudentAboutSection";
 import AdmissionForm from '../components/AdmissionForm';
 import LecturesSection from '../components/LecturesSection';
-import NotesSection from '../components/NotesSection';
+import NewNotesSection from '../components/NewNotesSection';
+
 import slug from "../pages/[slug]";
 
 
@@ -17,17 +18,31 @@ const StudentDashboard = () => {
   const handleCloseAdmissionForm = () => {
     setShowAdmissionForm(false);
   };
+  const lecturesRef = useRef(null);
+  const notesRef = useRef(null);
+
+  const scrollToLectures = () => {
+    lecturesRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToNotes = () => {
+    notesRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div>
-      <StudentNavbar onContact={handleContact} />
+      <StudentNavbar onContact={handleContact} scrollToLectures={scrollToLectures} scrollToNotes={scrollToNotes} />
       {showAdmissionForm ? (
         <AdmissionForm onClose={handleCloseAdmissionForm} />
       ) : (
         <div>
-          <StudentAboutSection/>
-          <LecturesSection />
-          <NotesSection/>
+          <StudentAboutSection />
+          <div ref={lecturesRef}>
+            <LecturesSection />
+          </div>
+          <div ref={notesRef}>
+            <NewNotesSection />
+          </div>
         </div>
       )}
     </div>

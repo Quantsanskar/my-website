@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdmissionForm from '../components/AdmissionForm';
 import styles from '../styles/StudentNavbar.module.css';
-const Navbar = () => {
+const Navbar = ({ scrollToLectures, scrollToNotes }) => {
     const router = useRouter();
 
 
@@ -25,12 +25,14 @@ const Navbar = () => {
         router.push('/studentProfile');
     }
 
-    
+
 
     return (
         <div className={styles.navbarContainer}>
             <button className={styles.navbarButton} onClick={handleProfile}>Profile</button>
-            <button className={styles.navbarButton} >About</button>
+            <button className={styles.navbarButton} onClick={scrollToLectures}>Lectures</button>
+            <button className={styles.navbarButton} onClick={scrollToNotes}>Notes</button>
+
             <button className={styles.navbarButton} onClick={handleLogout}>Log Out</button>
             <button className={styles.navbarButton} onClick={openForm}>Contact</button>
             {isFormOpen && <div className={styles.admissionFormContainer}><AdmissionForm onClose={closeForm} /></div>}
