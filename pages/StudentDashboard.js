@@ -3,6 +3,8 @@ import StudentNavbar from '../components/StudentNavbar';
 import StudentAboutSection from "../components/StudentAboutSection";
 import AdmissionForm from '../components/AdmissionForm';
 import LecturesSection from '../components/LecturesSection';
+import NotesSection from '../components/NotesSection';
+import slug from "../pages/[slug]";
 
 
 const StudentDashboard = () => {
@@ -25,6 +27,7 @@ const StudentDashboard = () => {
         <div>
           <StudentAboutSection/>
           <LecturesSection />
+          <NotesSection/>
         </div>
       )}
     </div>
