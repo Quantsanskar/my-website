@@ -9,6 +9,7 @@ import LocationSection from '../components/LocationSection';
 import MentorsSection from '../components/MentorsSection';
 import AdmissionButton from '../components/AdmissionButton';
 import AdmissionForm from '../components/AdmissionForm';
+import CharacterComponent from '../components/CharacterComponent';
 
 
 const MainPage = () => {
@@ -29,13 +30,13 @@ const MainPage = () => {
     return (
         <ErrorBoundary>
             <div>
-                {/* <h1>My Django + Next.js App</h1> */}
                 <ul>
                     {data.map(item => (
                         <li key={item.id}>{item.name} - {item.description}</li>
                     ))}
                 </ul>
-                <Navbar />
+                <Navbar/>
+                <CharacterComponent/>
                 <CenteredTitle />
                 <div
                     style={{

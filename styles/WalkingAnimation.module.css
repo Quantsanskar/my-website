@@ -1,0 +1,19 @@
+/* CharacterComponent.module.css */
+.character {
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+   
+    /* position: fixed; */
+    left: 0; /* Start position at the left of the screen */
+    top: calc(0% - 50px); /* Center vertically */
+    animation: slideIn 2s forwards; /* Animation name and duration */
+}
+
+@keyframes slideIn {
+    0% {
+        left: -50px; /* Start position off-screen */
+    }
+    100% {
+        left: calc(10% -15px); /* Stop position at center */
+    }
+}
