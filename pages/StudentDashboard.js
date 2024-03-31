@@ -7,6 +7,7 @@ import NewNotesSection from '../components/NewNotesSection';
 
 import slug from "../pages/[slug]";
 import TestsSection from '../components/TestsSection';
+import Footer from '../components/Footer';
 
 
 const StudentDashboard = () => {
@@ -51,6 +52,7 @@ const StudentDashboard = () => {
           <div ref={testsRef}>
             <TestsSection />
           </div>
+          <Footer />
         </div>
       )}
     </div>

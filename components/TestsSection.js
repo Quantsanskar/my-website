@@ -127,9 +127,11 @@ const TestsSection = () => {
                             file={selectedPdf.pdfUrl}
                             onLoadSuccess={onDocumentLoadSuccess}
                             options={{
+                                disableCopy: true,
                                 disableDownload: true,
                                 disablePrinting: true,
                             }}
+                            onContextMenu={(e) => e.preventDefault()} // Prevent default context menu (right-click menu)
                         >
                             {Array.from(new Array(numPages), (_, index) => (
                                 <Page

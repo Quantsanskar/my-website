@@ -9,7 +9,7 @@ const NotesSection = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedPdf, setSelectedPdf] = useState(null);
     const [numPages, setNumPages] = useState(null);
-
+    // const pdfViewerRef = useRef(null);
     useEffect(() => {
         // Fetch PDF data and set it to the pdfs state
         // Dummy PDF data
@@ -110,9 +110,12 @@ const NotesSection = () => {
                             file={selectedPdf.pdfUrl}
                             onLoadSuccess={onDocumentLoadSuccess}
                             options={{
+                                disableCopy: true,
                                 disableDownload: true,
                                 disablePrinting: true,
+                                disableScreenshot: true,
                             }}
+                            onContextMenu={(e) => e.preventDefault()} // Prevent default context menu (right-click menu)
                         >
                             {Array.from(new Array(numPages), (_, index) => (
                                 <Page

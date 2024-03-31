@@ -1,12 +1,18 @@
 .centeredTitle {
   font-family: Marienda;
-    text-align: center;
-    font-size: 2.5rem; /* Increase the font size */
-    margin-bottom: 1rem; /* Decrease the margin bottom */
-  }
-  
-  /* Homepage content */
-  .homepageContent {
-    padding: 2rem; /* Add padding to the homepage content */
-    font-size: 1.5rem; /* Decrease the font size */
-  }
+  text-align: center;
+  font-size: 2.5rem;
+  /* Increase the font size */
+  margin-bottom: 1rem;
+  /* Decrease the margin bottom */
+  background-color: rgba(0, 0, 0, 0.219);
+  color: burlywood;
+}
+
+/* Homepage content */
+.homepageContent {
+  padding: 2rem;
+  /* Add padding to the homepage content */
+  font-size: 1.5rem;
+  /* Decrease the font size */
+}

@@ -1,0 +1,26 @@
+/* styles/Footer.module.css */
+
+/* Footer container */
+.footerContainer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation list */
+.footerNav {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Navigation list items */
+.footerNavItem {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Navigation links */
+.footerNavLink {
+    color: #333;
+    text-decoration: none;
+}

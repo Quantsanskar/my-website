@@ -10,6 +10,7 @@ import MentorsSection from '../components/MentorsSection';
 import AdmissionButton from '../components/AdmissionButton';
 import AdmissionForm from '../components/AdmissionForm';
 import CharacterComponent from '../components/CharacterComponent';
+import Footer from '../components/Footer';
 
 
 const MainPage = () => {
@@ -58,6 +59,7 @@ const MainPage = () => {
                 <div id="mentors">
                     <MentorsSection />
                 </div>
+                <Footer />
                 {showAdmissionForm && <AdmissionForm onClose={toggleAdmissionForm} />}
 
             </div>
