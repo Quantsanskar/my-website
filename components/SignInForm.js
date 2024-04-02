@@ -1,7 +1,7 @@
 // SignInForm.js
 import React, { useState } from 'react';
 import styles from '../styles/SignInForm.module.css';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const router = useRouter();
@@ -17,18 +17,18 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
     e.preventDefault();
     try {
       const response = await fetch('http://127.0.0.1:8000/api/user', {
-        method: 'POST', 
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, password }),
       });
+      const data = await response.json();
       if (response.ok) {
-        const data = await response.json();
         // Redirect to student dashboard on successful authentication
         router.push('/StudentDashboard');
       } else {
-        setError('Invalid username or password');
+        setError(data.error || 'Invalid username or password');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -43,8 +43,8 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
         <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
         <h2 className={styles.signinTitle} >Sign In</h2>
         <form className={styles.signinForm} onSubmit={handleSubmit}>
-          <input type="text" className={styles.signinField} placeholder="Username" required />
-          <input type="password" className={styles.signinField} placeholder="Password" required />
+          <input type="text" className={styles.signinField} placeholder="Username" required onChange={(e) => setUsername(e.target.value)} />
+          <input type="password" className={styles.signinField} placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
           <button type="submit" className={styles.signinSubmit}>Sign In</button>
         </form>
         {error && <p className={styles.error}>{error}</p>}
@@ -52,6 +52,5 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
     </div>
   );
 };
-
 
 export default SignInForm;

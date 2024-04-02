@@ -17,7 +17,7 @@ const MainPage = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/mymodels/')
+        axios.get('http://127.0.0.1:8000/api/user')
             .then(response => setData(response.data))
             .catch(error => console.error(error));
     }, []);
