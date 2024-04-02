@@ -16,8 +16,8 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/authenticate', {
-        method: 'POST',
+      const response = await fetch('http://127.0.0.1:8000/api/user', {
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
@@ -45,7 +45,7 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
         <form className={styles.signinForm} onSubmit={handleSubmit}>
           <input type="text" className={styles.signinField} placeholder="Username" required />
           <input type="password" className={styles.signinField} placeholder="Password" required />
-          <button type="submit" className={styles.signinSubmit} onClick={router.push('/StudentDashboard')}>Sign In</button>
+          <button type="submit" className={styles.signinSubmit}>Sign In</button>
         </form>
         {error && <p className={styles.error}>{error}</p>}
       </div>
