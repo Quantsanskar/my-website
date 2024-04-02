@@ -19,6 +19,10 @@ const NotesSection = () => {
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more physics notes as needed
                 ]
             },
@@ -26,6 +30,10 @@ const NotesSection = () => {
                 subject: 'Chemistry',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more chem notes as needed
                 ]
@@ -35,6 +43,10 @@ const NotesSection = () => {
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more bio notes as needed
                 ]
             },
@@ -42,6 +54,10 @@ const NotesSection = () => {
                 subject: 'Maths',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
+                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more maths notes as needed
                 ]

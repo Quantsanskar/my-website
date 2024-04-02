@@ -1,5 +1,6 @@
 .container {
     margin: 20px;
+    width: 1502px;
 }
 
 .container h2 {
@@ -51,7 +52,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    width: 500px;
+    width: 485px;
     text-align: center;
 }
 

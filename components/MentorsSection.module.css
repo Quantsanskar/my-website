@@ -2,6 +2,7 @@
 
 /* Mentors section */
 .mentors {
+    min-width: 600px;
     padding: 2rem;
     color: burlywood;
     text-align: center;

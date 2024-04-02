@@ -1,12 +1,15 @@
 /* StudentNavbar.module.css */
 .navbarContainer {
+    /* margin-top: -18px; */
+    top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
+    padding: 22px 500px;
+    background-color: #54564c;
     border-bottom: 1px solid #ccc;
     transition: background-color 0.3s ease;
+    position: fixed;
 }
 
 .navbarContainer:hover {

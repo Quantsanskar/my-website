@@ -1,4 +1,5 @@
 .centeredTitle {
+  min-width: 600px;
   font-family: Marienda;
   text-align: center;
   font-size: 2.5rem;
@@ -7,6 +8,7 @@
   /* Decrease the margin bottom */
   background-color: rgba(0, 0, 0, 0.219);
   color: burlywood;
+
 }
 
 /* Homepage content */
