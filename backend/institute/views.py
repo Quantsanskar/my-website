@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics, response, status
+
 from .models import User, Admin, Student, Teacher
 from .serializers import (
     UserSerializer,
@@ -16,6 +17,13 @@ class UserListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         return User.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # class UserDetailAPIView(generics.GenericAPIView):
