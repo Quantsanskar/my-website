@@ -18,7 +18,7 @@ const MainPage = () => {
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/user')
-            .then(response => setData(response.data))
+            // .then(response => setData(response.data))
             .catch(error => console.error(error));
     }, []);
     const [showAdmissionForm, setShowAdmissionForm] = useState(false);
