@@ -1,69 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import axios from 'axios';
-import ErrorBoundary from '../components/ErrorBoundary';
-import Navbar from '../components/Navbar';
-import CenteredTitle from '../components/CenteredTitle';
-import HomePage from '../components/HomePage';
-import LocationSection from '../components/LocationSection';
-import MentorsSection from '../components/MentorsSection';
-import AdmissionButton from '../components/AdmissionButton';
-import AdmissionForm from '../components/AdmissionForm';
-import CharacterComponent from '../components/CharacterComponent';
-import Footer from '../components/Footer';
-
+import React from 'react';
+import { useRouter } from 'next/router';
+import MainNavbar from "../components/mainNavbar"; // Corrected naming convention
+import '../styles/MainPage.css';
+import InstitutesPage from '../components/InstitutesPage';
+import MainFooter from "../components/mainFooter"; // Corrected naming convention
 
 const MainPage = () => {
-    const [data, setData] = useState([]);
+    const router = useRouter();
 
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/user')
-            // .then(response => setData(response.data))
-            .catch(error => console.error(error));
-    }, []);
-    const [showAdmissionForm, setShowAdmissionForm] = useState(false);
-
-    const toggleAdmissionForm = () => {
-        setShowAdmissionForm(!showAdmissionForm);
+    const handleNavigateToInstitutes = () => {
+        router.push('/institutes'); // Navigate to InstitutesPage
     };
 
-
     return (
-        <ErrorBoundary>
-            <div>
-                <ul>
-                    {data.map(item => (
-                        <li key={item.id}>{item.name} - {item.description}</li>
-                    ))}
-                </ul>
-                <Navbar/>
-                <CharacterComponent/>
-                <CenteredTitle />
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-                    <div style={{ marginBottom: '1rem' }}>
-                        <HomePage />
-                    </div>
-                    <AdmissionButton onClick={toggleAdmissionForm} />
-                </div>
-
-                <div id="location">
-
-                    <LocationSection />
-                </div>
-                <div id="mentors">
-                    <MentorsSection />
-                </div>
-                <Footer />
-                {showAdmissionForm && <AdmissionForm onClose={toggleAdmissionForm} />}
-
+        <div className="content">
+            {/* Content of the main page goes here */}
+            <h2>StudyPhora</h2>
+            <div className="services-section">
+                <h2>Our Services</h2>
+                <p>Explore our range of services:</p>
+                {/* Use arrow function or callback function */}
+                <button onClick={handleNavigateToInstitutes}>Institutes</button>
             </div>
-        </ErrorBoundary >
+            {/* Render MainFooter component */}
+            <MainFooter />
+        </div>
     );
 };
 

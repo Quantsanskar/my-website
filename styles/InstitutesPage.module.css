@@ -1,0 +1,19 @@
+.institutes-page {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    padding: 20px;
+}
+
+.institutes-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.institutes-section h2 {
+    color: #333;
+}
+
+/* Add more styles as needed for the list of institutes */

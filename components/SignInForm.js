@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/SignInForm.module.css';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import passwordHash from 'password-hash';
+// import passwordHash from 'password-hash';
 
 const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const router = useRouter();
