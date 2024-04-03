@@ -1,4 +1,6 @@
+import json
 from django.shortcuts import render
+from django.http import JsonResponse
 from rest_framework import generics, response, status
 
 from .models import User, Admin, Student, Teacher
@@ -43,7 +45,7 @@ class AdminListAPIView(generics.ListAPIView):
         return Admin.objects.all()
 
 
-class StudentListAPIView(generics.ListAPIView):
+class StudentListAPIView(generics.ListCreateAPIView):  # Changed to ListCreateAPIView for POST method
     serializer_class = StudentSerializer
 
     def get_queryset(self):
@@ -55,3 +57,21 @@ class TeacherListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         return Teacher.objects.all()
+
+def authenticate_user(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username', '')
+        password = data.get('password', '')
+
+        # Fetch student from the database based on the username
+        try:
+            student = Student.objects.get(erpid=username)
+        except Student.DoesNotExist:
+            return JsonResponse({'error': 'Invalid username'}, status=400)
+
+        # Check if the password matches
+        if student.password == password:
+            return JsonResponse({'username': username}, status=200)
+        else:
+            return JsonResponse({'error': 'Invalid password'}, status=400)

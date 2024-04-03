@@ -1,12 +1,57 @@
 // LecturesSection.js
 
-import React, { useState } from 'react';
-import LectureVideo from '../components/LectureVideo'; // Assuming you have a LectureVideo component for displaying individual videos
-import styles from '../styles/LecturesSection.module.css'; // Import CSS module for styling
+import React, { useState, useEffect } from 'react';
+import LectureVideo from '../components/LectureVideo';
+import styles from '../styles/LecturesSection.module.css';
+import axios from 'axios';
 
 const LecturesSection = () => {
-    // Dummy lecture data for demonstration
-    const lectures = [
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredLectures, setFilteredLectures] = useState([]);
+    const [studentSubjects, setStudentSubjects] = useState([]);
+
+    // LecturesSection.js
+    useEffect(() => {
+        const fetchStudentData = async () => {
+            try {
+                // Fetch student data from backend
+                const studentResponse = await axios.get('http://127.0.0.1:8000/api/student');
+                const student = studentResponse.data.find(item => item.username === localStorage.getItem('username'));
+
+                // Set student's subjects
+                if (student) {
+                    setStudentSubjects(student.subjects.split(',').map(subject => subject.trim()));
+
+                    // Filter lectures based on student's subjects
+                    const filteredLectures = getFilteredLectures(student.subjects);
+                    setFilteredLectures(filteredLectures);
+                } else {
+                    throw new Error('Student not found');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        // Call the fetchStudentData function only if username is available in localStorage
+        const username = localStorage.getItem('username');
+        if (username) {
+            fetchStudentData();
+        }
+    }, []);
+
+
+    
+
+const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearchQuery(value);
+    filterLectures(value);
+};
+
+// Dummy method to get filtered lectures data
+const getFilteredLectures = (studentSubjects) => {
+    const dummyLectures = [
         {
             subject: 'Physics',
             chapters: [
@@ -14,8 +59,7 @@ const LecturesSection = () => {
                     name: 'Mechanics',
                     videos: [
                         { title: 'Introduction to Mechanics', videoUrl: 'https://www.youtube.com/embed/2E8IZy8aWhw?si=W79L8Pr0B0hQiOLb' },
-                        { title: 'Newton\'s Laws of Motion', videoUrl: 'https://www.youtube.com/embed/JGO_zDWmkvk?si=VMQcj6hoqoC9zE4A' },
-                        // Add more videos for Mechanics chapter
+                        { title: "Newton's Laws of Motion", videoUrl: 'https://www.youtube.com/embed/JGO_zDWmkvk?si=VMQcj6hoqoC9zE4A' },
                     ]
                 },
                 {
@@ -23,10 +67,8 @@ const LecturesSection = () => {
                     videos: [
                         { title: 'Electric Charges and Fields', videoUrl: 'https://www.youtube.com/watch?v=HnH0xROoDIY' },
                         { title: 'Magnetic Effects of Current', videoUrl: 'https://www.youtube.com/watch?v=caJOmrnKrg0' },
-                        // Add more videos for Electricity and Magnetism chapter
                     ]
                 },
-                // Add more chapters for Physics subject
             ]
         },
         {
@@ -37,7 +79,6 @@ const LecturesSection = () => {
                     videos: [
                         { title: 'Introduction to Organic Chemistry', videoUrl: 'https://www.youtube.com/watch?v=qre77RG_bNI' },
                         { title: 'Alkanes and Cycloalkanes', videoUrl: 'https://www.youtube.com/watch?v=Xbq2ikJoNmo' },
-                        // Add more videos for Organic Chemistry chapter
                     ]
                 },
                 {
@@ -45,10 +86,8 @@ const LecturesSection = () => {
                     videos: [
                         { title: 'Introduction to Inorganic Chemistry', videoUrl: 'https://www.youtube.com/watch?v=Yw3KQX10Gvs' },
                         { title: 'Periodic Table Trends', videoUrl: 'https://www.youtube.com/watch?v=l5Al2lEpvQs' },
-                        // Add more videos for Inorganic Chemistry chapter
                     ]
                 },
-                // Add more chapters for Chemistry subject
             ]
         },
         {
@@ -59,7 +98,6 @@ const LecturesSection = () => {
                     videos: [
                         { title: 'Introduction to Cell Biology', videoUrl: 'https://www.youtube.com/embed/8IlzKri08kk?si=elFafe6OZkD41XHK' },
                         { title: 'Cell Membrane Structure and Function', videoUrl: 'https://www.youtube.com/embed/fJfTDc3WzQ8?si=0ZjfehBNeBQShQjk' },
-                        // Add more videos for Cell Biology chapter
                     ]
                 },
                 {
@@ -67,63 +105,80 @@ const LecturesSection = () => {
                     videos: [
                         { title: 'Introduction to Genetics', videoUrl: 'https://www.youtube.com/watch?v=m-H64-ilujI' },
                         { title: 'Mendelian Genetics', videoUrl: 'https://www.youtube.com/watch?v=mhZ7_bKLm9I' },
-                        // Add more videos for Genetics chapter
                     ]
                 },
-                // Add more chapters for Biology subject
             ]
         },
-        // Add more subjects as needed
+        {
+            subject: 'Maths',
+            chapters: [
+                {
+                    name: 'Set',
+                    videos: [
+                        { title: 'Introduction to Cell Biology', videoUrl: 'https://www.youtube.com/embed/8IlzKri08kk?si=elFafe6OZkD41XHK' },
+                        { title: 'Cell Membrane Structure and Function', videoUrl: 'https://www.youtube.com/embed/fJfTDc3WzQ8?si=0ZjfehBNeBQShQjk' },
+                    ]
+                },
+                {
+                    name: 'Realations and Functions',
+                    videos: [
+                        { title: 'Introduction to Genetics', videoUrl: 'https://www.youtube.com/watch?v=m-H64-ilujI' },
+                        { title: 'Mendelian Genetics', videoUrl: 'https://www.youtube.com/watch?v=mhZ7_bKLm9I' },
+                    ]
+                },
+            ]
+        },
     ];
-    const [searchQuery, setSearchQuery] = useState('');
-    const [filteredLectures, setFilteredLectures] = useState(lectures);
 
-    const handleSearch = (e) => {
-        const { value } = e.target;
-        setSearchQuery(value);
-        filterLectures(value);
-    };
-
-    const filterLectures = (query) => {
-        const filtered = lectures.filter((subject) => {
-            const matchingChapters = subject.chapters.filter((chapter) =>
-                chapter.videos.some((video) =>
-                    video.title.toLowerCase().includes(query.toLowerCase())
-                )
-            );
-            return matchingChapters.length > 0;
-        });
-        setFilteredLectures(filtered);
-    };
-    return (
-        <div className={styles.lecturesContainer}>
-            <h2>Lectures</h2>
-            <input
-                type="text"
-                placeholder="Search by lecture name or chapter"
-                className={styles.searchInput}
-                value={searchQuery}
-                onChange={handleSearch}
-            />
-            {filteredLectures.map((subject, subjectIndex) => (
-                <div key={subjectIndex}>
-                    <h3>{subject.subject}</h3>
-                    <div className={styles.subjectContainer}>
-                        {subject.chapters.map((chapter, chapterIndex) => (
-                            <div key={chapterIndex} className={styles.chapterContainer}>
-                                <h4 className={styles.chapterName}>{chapter.name}</h4>
-                                <div className={styles.videoList}>
-                                    {chapter.videos.map((video, videoIndex) => (
-                                        <LectureVideo key={videoIndex} title={video.title} videoUrl={video.videoUrl} />
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
+    // Filter lectures based on the student's subjects
+    const filteredLectures = dummyLectures.filter(lecture =>
+        studentSubjects.includes(lecture.subject)
     );
+    return filteredLectures;
+};
+
+const filterLectures = (query) => {
+    const filtered = filteredLectures.filter((subject) => {
+        const matchingChapters = subject.chapters.filter((chapter) =>
+            chapter.videos.some((video) =>
+                video.title.toLowerCase().includes(query.toLowerCase())
+            )
+        );
+        return matchingChapters.length > 0;
+    });
+    setFilteredLectures(filtered);
+};
+
+
+return (
+    <div className={styles.lecturesContainer}>
+        <h2>Lectures</h2>
+        <input
+            type="text"
+            placeholder="Search by lecture name or chapter"
+            className={styles.searchInput}
+            value={searchQuery}
+            onChange={handleSearch}
+        />
+        {filteredLectures.map((subject, subjectIndex) => (
+            <div key={subjectIndex}>
+                <h3>{subject.subject}</h3>
+                <div className={styles.subjectContainer}>
+                    {subject.chapters.map((chapter, chapterIndex) => (
+                        <div key={chapterIndex} className={styles.chapterContainer}>
+                            <h4 className={styles.chapterName}>{chapter.name}</h4>
+                            <div className={styles.videoList}>
+                                {chapter.videos.map((video, videoIndex) => (
+                                    <LectureVideo key={videoIndex} title={video.title} videoUrl={video.videoUrl} />
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        ))}
+    </div>
+);
 };
 
 export default LecturesSection;

@@ -1,7 +1,8 @@
-// SignInForm.js
 import React, { useState } from 'react';
 import styles from '../styles/SignInForm.module.css';
 import { useRouter } from 'next/router';
+import axios from 'axios';
+import passwordHash from 'password-hash';
 
 const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const router = useRouter();
@@ -16,32 +17,34 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        // Redirect to student dashboard on successful authentication
-        router.push('/StudentDashboard');
-      } else {
-        setError(data.error || 'Invalid username or password');
+      // Fetch all usernames and passwords from the backend
+      const response = await axios.get('http://127.0.0.1:8000/api/student');
+      const students = response.data;
+
+      // Iterate through each student to find a matching username and password
+      for (const student of students) {
+        if (student.username === username && student.password === password) {
+          // If a match is found, redirect to the student dashboard
+          localStorage.setItem('username', username);
+          router.push('/StudentDashboard');
+          return; // Exit the loop
+        }
       }
+
+      // If no match is found, display an error message
+      setError('Invalid username or password');
     } catch (error) {
       console.error('Error:', error);
       setError('An unexpected error occurred');
     }
-    closeSignIn(); // Close the sign-in form
+    closeSignIn();
   };
 
   return (
     <div className={styles.signInOverlay}>
       <div className={styles.signInForm}>
         <button className={styles.closeSignIn} onClick={closeSignIn}>X</button>
-        <h2 className={styles.signinTitle} >Sign In</h2>
+        <h2 className={styles.signinTitle}>Sign In</h2>
         <form className={styles.signinForm} onSubmit={handleSubmit}>
           <input type="text" className={styles.signinField} placeholder="Username" required onChange={(e) => setUsername(e.target.value)} />
           <input type="password" className={styles.signinField} placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
