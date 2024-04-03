@@ -49,11 +49,11 @@ const Navbar = () => {
         <div className={isOpen ? styles.menuIconOpen : styles.menuIconBar}></div>
       </div>
       <ul className={isOpen ? `${styles.navList} ${styles.open}` : styles.navList}>
-        <li className={styles.navItem}>
+        {/* <li className={styles.navItem}>
           <a href="#" className={styles.navLink} onClick={() => scrollToSection('about-us')}>
             About Us
           </a>
-        </li>
+        </li> */}
         <li className={styles.navItem}>
           <a href="#" className={styles.navLink} onClick={() => scrollToSection('location')}>
             Location
@@ -64,11 +64,11 @@ const Navbar = () => {
             Our Mentors
           </a>
         </li>
-        <li className={styles.navItem}>
+        {/* <li className={styles.navItem}>
           <a href="#" className={styles.navLink} onClick={() => scrollToSection('admission-button')}>
             Join and Apply
           </a>
-        </li>
+        </li> */}
         <li className={styles.navItem}>
           <a href="#" className={styles.navLink} onClick={toggleSignIn}>
             Sign In as Student

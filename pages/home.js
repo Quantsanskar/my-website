@@ -17,8 +17,8 @@ const MainPage = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/mymodels/')
-            .then(response => setData(response.data))
+        axios.get('http://localhost:8000')
+            // .then(response => setData(response.data))
             .catch(error => console.error(error));
     }, []);
     const [showAdmissionForm, setShowAdmissionForm] = useState(false);
