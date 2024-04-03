@@ -1,0 +1,76 @@
+/* AdminDashboard.module.css */
+
+.adminDashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.greeting {
+    font-family: Marienda;
+    text-align: center;
+    font-size: 44px;
+    color: burlywood;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.navbarList {
+    display: flex;
+    justify-content: space-between; /* Align list items horizontally with space between them */
+    align-items: center; /* Align list items vertically in the center */
+    list-style: none;
+    padding: 0;
+  }
+
+.mainContent {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.navbarLogOutButton {
+    background-color: #f44336;
+    /* Red background color */
+    color: #fff;
+    /* White text color */
+    padding: 10px 20px;
+    /* Padding around the button text */
+    font-size: 16px;
+    /* Font size */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for color changes */
+}
+
+.navbarLogOutButton:hover {
+    background-color: #d32f2f;
+    /* Darker red background color on hover */
+}
