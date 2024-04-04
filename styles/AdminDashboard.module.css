@@ -26,11 +26,12 @@
 
 .navbarContainer {
     background-color: #333;
-    border-radius: 20px;
+    border-radius: 30px;
     /* Increased border radius for a curvier look */
-    padding: 20px;
+    padding: 100px;
     /* Increased padding for more spacing */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    height: 2000px;
 }
 
 .navbar {
