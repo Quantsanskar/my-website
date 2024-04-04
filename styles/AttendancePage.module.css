@@ -87,15 +87,42 @@
 }
 
 .present {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
+    /* Green */
     color: #fff;
 }
 
 .absent {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
+    /* Red */
     color: #fff;
 }
 
 .button:hover {
     opacity: 0.9;
+}
+
+.submitButtonContainer {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the content */
+    margin-top: 20px;
+}
+
+.submitButton {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    /* Blue color */
+    color: #fff;
+    /* White text color */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+    /* Darker blue color on hover */
 }
