@@ -2,6 +2,7 @@
 
 .attendancePage {
     padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .searchBar {
@@ -9,25 +10,46 @@
 }
 
 .searchInput {
-    padding: 8px;
+    padding: 12px;
     width: 300px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.searchInput:focus {
+    border-color: #007bff;
 }
 
 .studentList {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
 .studentCard {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.studentCard:hover {
+    transform: translateY(-5px);
+}
+
+.studentCard h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.studentCard p {
+    margin: 5px 0;
+    color: #666;
 }
 
 .pagination {
@@ -37,40 +59,43 @@
 }
 
 .pageNumber {
-    padding: 8px 12px;
+    padding: 12px 24px;
     margin: 0 5px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pageNumber:hover {
+    background-color: #0056b3;
 }
 
 .activePage {
     background-color: #0056b3;
 }
 
-.disabled {
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-
-  
-  .button {
-    margin-top: 10px;
-    padding: 10px 20px;
+.button {
+    padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .present {
-    background-color: #4caf50; /* Green */
-    color: white;
-  }
-  
-  .absent {
-    background-color: #f44336; /* Red */
-    color: white;
-  }
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.present {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+
+.absent {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}
+
+.button:hover {
+    opacity: 0.9;
+}

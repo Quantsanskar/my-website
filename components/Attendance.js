@@ -1,5 +1,3 @@
-// AttendancePage.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../styles/AttendancePage.module.css';
@@ -18,7 +16,6 @@ const AttendancePage = () => {
             [id]: type
         }));
     };
-
 
     useEffect(() => {
         // Fetch all students from backend API
@@ -43,10 +40,6 @@ const AttendancePage = () => {
     const handleSearch = (e) => {
         setSearchQuery(e.target.value);
     };
-    const markAttendance = (studentId, status) => {
-        // Logic to mark attendance
-        console.log(`Marking attendance for student ${studentId} as ${status}`);
-    };
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -69,11 +62,11 @@ const AttendancePage = () => {
                 />
             </div>
             <div className={styles.studentList}>
-                {students.map(student => (
+                {currentStudents.map(student => (
                     <div className={styles.studentCard} key={student.id}>
                         <h3>{student.name}</h3>
                         <p>Username: {student.username}</p>
-                        <p>Class: {student.class}</p>
+                        <p>Class: {student.clas}</p>
                         <button
                             className={`${styles.button} ${attendance[student.id] === 'present' ? styles.present : ''}`}
                             onClick={() => handleAttendanceClick(student.id, 'present')}
