@@ -15,5 +15,5 @@ urlpatterns = [
     path("admin", AdminListAPIView.as_view(), name="admin"),
     path("student", StudentListAPIView.as_view(), name="student"),
     path("teacher", TeacherListAPIView.as_view(), name="teacher"),
-    path("send-sms/", SendSMSView.as_view(), name="send_sms"),
+    path("api/send-sms/", SendSMSView.as_view(), name="send_sms"),
 ]

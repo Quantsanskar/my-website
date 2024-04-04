@@ -13,6 +13,8 @@ from .serializers import (
     TeacherSerializer,
 )
 
+from django.views.decorators.csrf import csrf_exempt
+
 # Create your views here.
 
 
@@ -82,9 +84,37 @@ def authenticate_user(request):
             return JsonResponse({"error": "Invalid password"}, status=400)
 
 
+# class SendSMSView(APIView):
+#     def post(self, request):
+#         to = request.data.get("to")
+#         body = request.data.get("body")
+#         send_sms(to, body)
+#         return response.Response({"message": "SMS sent successfully"})
+
+
+# @csrf_exempt
+# def SendSMSView(request):
+#     if request.method == "POST":
+#         data = json.loads(request.body)
+#         phone_number = data.get("phone_number")
+#         message = data.get("message")
+#         if phone_number and message:
+#             send_sms(phone_number, message)
+#             return JsonResponse({"message": "SMS sent successfully"})
+#         else:
+#             return JsonResponse({"error": "Invalid request body"}, status=400)
+#     else:
+#         return JsonResponse({"error": "Method not allowed"}, status=405)
+
+
 class SendSMSView(APIView):
     def post(self, request):
-        to = request.data.get("to")
-        body = request.data.get("body")
-        send_sms(to, body)
-        return response.Response({"message": "SMS sent successfully"})
+        phone_number = request.data.get("phone_number")
+        message = request.data.get("message")
+        if phone_number and message:
+            send_sms(phone_number, message)
+            return response.Response({"message": "SMS sent successfully"})
+        else:
+            return response.Response(
+                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
+            )
