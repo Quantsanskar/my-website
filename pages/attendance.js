@@ -1,8 +1,8 @@
 // pages/attendance.js
-import Attendance from '../components/Attendance';
+import Attendance from "../components/Attendance";
 
-const AttendancePage = () => {
-    return <Attendance />;
+const AdminPage = () => {
+    return <Attendance />
 };
 
-export default AttendancePage;
+export default AdminPage;

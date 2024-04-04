@@ -3,25 +3,35 @@
 import React, { useState } from 'react';
 import styles from '../styles/AdminForm.module.css';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 const AdminForm = ({ isFormOpen, closeForm }) => {
-    const [adminUser, setAdminUser] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const router = useRouter();
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add your logic for handling form submission here
-        console.log('Admin User:', adminUser);
-        console.log('Password:', password);
-        if (adminUser && password) {
-            // Close the form after submission and redirect to dashboard
-            closeForm();
-            router.push('/attendance');
-        } else {
-            // show validation
+        try {
+          // Fetch all usernames and passwords from the backend
+          const response = await axios.get('http://127.0.0.1:8000/api/admin');
+          const admins = response.data;
+    
+          // Iterate through each student to find a matching username and password
+          for (const admin of admins) {
+            if (admin.username === username && admin.password === password) {
+              
+              router.push('/admin');
+              return; // Exit the loop
+            }
+          }
+          // If no match is found, display an error message
+          setError('Invalid username or password');
+        } catch (error) {
+          console.error('Error:', error);
+          setError('An unexpected error occurred');
         }
-
-    };
+      };
 
     return (
         <div className={`${styles.adminFormOverlay} ${isFormOpen ? styles.showForm : ''}`}>
@@ -33,8 +43,8 @@ const AdminForm = ({ isFormOpen, closeForm }) => {
                         type="text"
                         className={styles.inputField}
                         placeholder="Admin User"
-                        value={adminUser}
-                        onChange={(e) => setAdminUser(e.target.value)}
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                 </div>
