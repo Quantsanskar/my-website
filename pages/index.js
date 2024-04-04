@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import MainNavbar from "../components/mainNavbar"; // Corrected naming convention
 import '../styles/MainPage.css';
-import InstitutesPage from '../components/InstitutesPage';
 import MainFooter from "../components/mainFooter"; // Corrected naming convention
 
 const MainPage = () => {
@@ -16,6 +15,9 @@ const MainPage = () => {
         <div className="content">
             {/* Content of the main page goes here */}
             <h2>StudyPhora</h2>
+            <div>
+                <MainNavbar/>
+            </div>
             <div className="services-section">
                 <h2>Our Services</h2>
                 <p>Explore our range of services:</p>

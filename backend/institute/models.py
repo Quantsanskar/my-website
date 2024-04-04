@@ -26,6 +26,7 @@ class Admin(models.Model):
 
 
 class Student(models.Model):
+<<<<<<< HEAD
     name = models.CharField(max_length=56, null=False)
     username = models.CharField(max_length=56, null=False)
     password = models.CharField(max_length=50, default="password", null=False)
@@ -34,6 +35,16 @@ class Student(models.Model):
     subjects = models.TextField(max_length=256, null=False)
     mobile = models.CharField(max_length=13, null=False, default="+91")
     email = models.EmailField(max_length=254, null=False)
+=======
+    name = models.CharField(max_length=56)
+    username = models.CharField(max_length=56)
+    password = models.CharField(max_length=50, default='password')
+    clas = models.CharField(max_length=56)
+    stream = models.CharField(max_length=56)
+    subjects = models.TextField(max_length=256)
+    mobile = models.CharField(max_length=10, null=False)
+    email = models.EmailField(max_length=254)
+>>>>>>> e1ad8d11197231cc35fb84b7c03cfaa3e78a47ad
 
 
 class Teacher(models.Model):

@@ -1,12 +1,18 @@
 /* AdminDashboard.module.css */
 
 .adminDashboard {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    /* Increased border radius for a curvier look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Increased box shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Align content vertically with space between */
+    height: 100vh;
+    /* Ensure the dashboard covers the entire viewport height */
 }
 
 .greeting {
@@ -18,59 +24,73 @@
     margin-bottom: 20px;
 }
 
-.navbar {
+.navbarContainer {
     background-color: #333;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 30px;
+    /* Increased border radius for a curvier look */
+    padding: 100px;
+    /* Increased padding for more spacing */
+    margin-bottom: 10px;
+    height: 2000px;
 }
 
-.navbar ul {
-    list-style-type: none;
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
+.navbarItemContainer {
+    margin-right: 20px;
+    /* Increased margin for more spacing between items */
+}
+
+.navbarItemContainer:hover {
+    background-color: #444;
+    /* Change background color on hover */
+}
+
 .navbar ul li {
-    display: inline-block;
-    margin-right: 10px;
     color: #fff;
     cursor: pointer;
+    padding: 15px 20px;
+    /* Increased padding for more clickable area */
+    border-radius: 20px;
+    /* Increased border radius for a curvier look */
 }
-.navbarList {
-    display: flex;
-    justify-content: space-between; /* Align list items horizontally with space between them */
-    align-items: center; /* Align list items vertically in the center */
-    list-style: none;
-    padding: 0;
-  }
+
+.navbar ul li:hover {
+    background-color: #444;
+    /* Change background color on hover */
+}
 
 .mainContent {
-    margin-top: 20px;
     padding: 20px;
+    /* Increased padding for more spacing */
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 20px;
+    /* Increased border radius for a curvier look */
+    flex: 1;
+    /* Fill the remaining vertical space */
 }
 
 .navbarLogOutButton {
     background-color: #f44336;
-    /* Red background color */
     color: #fff;
-    /* White text color */
-    padding: 10px 20px;
-    /* Padding around the button text */
-    font-size: 16px;
-    /* Font size */
+    padding: 15px 30px;
+    /* Increased padding for a bigger button */
+    font-size: 18px;
+    /* Increased font size for better visibility */
     border: none;
-    /* Remove border */
-    border-radius: 5px;
-    /* Rounded corners */
+    border-radius: 20px;
+    /* Increased border radius for a curvier look */
     cursor: pointer;
-    /* Change cursor to pointer on hover */
     transition: background-color 0.3s, color 0.3s;
-    /* Smooth transition for color changes */
 }
 
 .navbarLogOutButton:hover {
     background-color: #d32f2f;
-    /* Darker red background color on hover */
 }

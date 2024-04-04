@@ -67,7 +67,11 @@ const AttendancePage = () => {
                     for (const student of absentStudentsArray) {
                         // Ensure that student data includes the 'mobile' property
                         if (student.mobile) {
+<<<<<<< HEAD
                             await axios.post(`http://127.0.0.1:8000/api/send-sms/`, {
+=======
+                            await axios.post(`http://localhost:8000/api/send_sms`, {
+>>>>>>> e1ad8d11197231cc35fb84b7c03cfaa3e78a47ad
                                 to: student.mobile,
                                 body: `Your ward ${student.name} is absent today.`
                             });

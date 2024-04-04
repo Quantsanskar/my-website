@@ -2,8 +2,6 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework import generics, response, status
-from .utils import send_sms
-from rest_framework.views import APIView
 
 from .models import User, Admin, Student, Teacher
 from .serializers import (
@@ -49,9 +47,7 @@ class AdminListAPIView(generics.ListAPIView):
         return Admin.objects.all()
 
 
-class StudentListAPIView(
-    generics.ListCreateAPIView
-):  # Changed to ListCreateAPIView for POST method
+class StudentListAPIView(generics.ListCreateAPIView):  # Changed to ListCreateAPIView for POST method
     serializer_class = StudentSerializer
 
     def get_queryset(self):
@@ -64,23 +60,23 @@ class TeacherListAPIView(generics.ListAPIView):
     def get_queryset(self):
         return Teacher.objects.all()
 
-
 def authenticate_user(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         data = json.loads(request.body)
-        username = data.get("username", "")
-        password = data.get("password", "")
+        username = data.get('username', '')
+        password = data.get('password', '')
 
         # Fetch student from the database based on the username
         try:
             student = Student.objects.get(erpid=username)
         except Student.DoesNotExist:
-            return JsonResponse({"error": "Invalid username"}, status=400)
+            return JsonResponse({'error': 'Invalid username'}, status=400)
 
         # Check if the password matches
         if student.password == password:
-            return JsonResponse({"username": username}, status=200)
+            return JsonResponse({'username': username}, status=200)
         else:
+<<<<<<< HEAD
             return JsonResponse({"error": "Invalid password"}, status=400)
 
 
@@ -118,3 +114,6 @@ class SendSMSView(APIView):
             return response.Response(
                 {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
             )
+=======
+            return JsonResponse({'error': 'Invalid password'}, status=400)
+>>>>>>> e1ad8d11197231cc35fb84b7c03cfaa3e78a47ad
