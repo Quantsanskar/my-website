@@ -45,6 +45,33 @@ const AttendancePage = () => {
         setCurrentPage(pageNumber);
     };
 
+    const handleSubmit = async () => {
+        try {
+            // Retrieve details of absent students from backend API
+            const absentStudentDetails = await axios.get('http://localhost:8000/api/student');
+
+            // Extract mobile numbers and names of absent students
+            const absentStudentsData = absentStudentDetails.data;
+
+            // Filter absent students based on attendance status
+            const absentStudents = Object.keys(attendance)
+                .filter(id => attendance[id] === 'absent')
+                .map(id => absentStudentsData.find(student => student.id === id));
+
+            // Send messages to absent students
+            for (const student of absentStudents) {
+                await axios.post('http://localhost:8000/api/send_sms/+917289939775/"fghfhyfhyjjyvjy"', {
+                    phoneNumber: '7289939775',
+                    message: `Your ward Sanskar is absent today.`
+                });
+                console.log(`Message sent to ${student.name}`);
+            }
+        } catch (error) {
+            console.error('Failed to send messages to absent students:', error);
+        }
+    };
+
+
     // Pagination
     const indexOfLastStudent = currentPage * studentsPerPage;
     const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
@@ -92,6 +119,9 @@ const AttendancePage = () => {
                         {index + 1}
                     </button>
                 ))}
+            </div>
+            <div className={styles.submitButtonContainer}>
+                <button className={styles.submitButton} onClick={handleSubmit}>Send Messages to Absent Students</button>
             </div>
         </div>
     );
