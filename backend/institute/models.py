@@ -28,11 +28,11 @@ class Admin(models.Model):
 class Student(models.Model):
     name = models.CharField(max_length=56)
     username = models.CharField(max_length=56)
-    password = models.CharField(max_length=50, default='password')
+    password = models.CharField(max_length=50, default="password")
     clas = models.CharField(max_length=56)
     stream = models.CharField(max_length=56)
     subjects = models.TextField(max_length=256)
-    mobile = models.CharField(max_length=10, null=False)
+    mobile = models.CharField(max_length=10, null=False, default="+91")
     email = models.EmailField(max_length=254)
 
 

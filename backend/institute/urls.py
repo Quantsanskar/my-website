@@ -5,6 +5,8 @@ from .views import (
     StudentListAPIView,
     TeacherListAPIView,
 )
+from django.urls import path
+from .views import SendSMSView
 
 
 urlpatterns = [
@@ -13,4 +15,5 @@ urlpatterns = [
     path("admin", AdminListAPIView.as_view(), name="admin"),
     path("student", StudentListAPIView.as_view(), name="student"),
     path("teacher", TeacherListAPIView.as_view(), name="teacher"),
+    path("send-sms/", SendSMSView.as_view(), name="send_sms"),
 ]
