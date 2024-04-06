@@ -37,7 +37,7 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
       console.error('Error:', error);
       setError('An unexpected error occurred');
     }
-    closeSignIn();
+    // closeSignIn();
   };
 
   return (
