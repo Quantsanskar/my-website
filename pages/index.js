@@ -1,11 +1,12 @@
 // index.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 // import { useRouter } from 'next/navigation';
 import { useRouter } from 'next/router';
 // import { useHistory } from 'react-router-dom';
 import '../styles/MainPage.css'; // Import the CSS file
+import AdmissionForm from '../components/AdmissionForm';
 
 
 
@@ -17,12 +18,20 @@ const Index = () => {
 
     const router = useRouter();
 
+    const [isFormOpen, setIsFormOpen] = useState(false);
 
-
-    const handleContactClick = () => {
-        router.push('/contact');
+    const openForm = () => {
+        setIsFormOpen(true);
     };
-    const handleNavigateToAandG=()=>{
+
+    const closeForm = () => {
+        setIsFormOpen(false);
+        document.body.classList.remove('decreased-light');
+    };
+
+
+
+    const handleNavigateToAandG = () => {
         router.push('/home');
     };
     return (
@@ -52,7 +61,7 @@ const Index = () => {
             <section id="join-us" className="join-us">
                 <h2>Join Us Today</h2>
                 <p>Embark on a transformative learning experience. Join EduSphere and unlock a world of knowledge and opportunities.</p>
-                
+
             </section>
             <section id="features" className="features">
                 <div className="feature">
@@ -86,7 +95,7 @@ const Index = () => {
             <section id="contact" className="cta">
                 <h2>Get in Touch</h2>
                 <p>Have questions or need assistance? Feel free to contact us. We're here to help!</p>
-                <button onClick={handleContactClick}>Contact Us</button>
+                <button onClick={openForm}>Contact Us</button>
             </section>
             <section id="testimonials" className="testimonial-section">
                 <h2>What Our Students Say</h2>
@@ -99,6 +108,7 @@ const Index = () => {
                     <p className="testimonial-author">Jane Smith</p>
                 </div>
             </section>
+            {isFormOpen && <AdmissionForm onClose={closeForm} />}
         </>
     );
 }
