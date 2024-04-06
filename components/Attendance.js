@@ -57,24 +57,22 @@ const AttendancePage = () => {
             const absentStudentList = JSON.parse(localStorage.getItem('absentStudents'));
 
             // Check if absentStudentList is not null or undefined
-            if (absentStudentList !== null && typeof absentStudentList === 'object') {
+            if (absentStudentList && typeof absentStudentList === 'object') {
                 // Convert absentStudentList into an array
                 const absentStudentsArray = Object.values(absentStudentList);
 
                 // Check if absentStudentsArray is an array
                 if (Array.isArray(absentStudentsArray)) {
-                    // Send messages to absent students
+                    // Iterate over each absent student and send SMS
                     for (const student of absentStudentsArray) {
                         // Ensure that student data includes the 'mobile' property
                         if (student.mobile) {
-<<<<<<< HEAD
-                            await axios.post(`http://127.0.0.1:8000/api/send-sms/`, {
-=======
-                            await axios.post(`http://localhost:8000/api/send_sms`, {
->>>>>>> e1ad8d11197231cc35fb84b7c03cfaa3e78a47ad
-                                to: student.mobile,
-                                body: `Your ward ${student.name} is absent today.`
-                            });
+                            // Construct the message
+                            const message = `Your ward ${student.name} is absent today.`;
+
+                            // Send SMS to the student's mobile number
+                            await sendSMS(student.mobile, message);
+
                             console.log(`Message sent to ${student.name}`);
                         } else {
                             console.error(`Mobile number not found for student ${student.name}`);
@@ -91,6 +89,20 @@ const AttendancePage = () => {
             }
         } catch (error) {
             console.error('Failed to send messages to absent students:', error);
+        }
+    };
+
+    // Function to send SMS
+    const sendSMS = async (mobile, message) => {
+        try {
+            // Send SMS via Axios POST request to the API endpoint
+            await axios.post('http://localhost:8000/api/send-sms-request/', {
+                phone_number: mobile,
+                message: message
+            });
+        } catch (error) {
+            // Handle any errors that occur during the SMS sending process
+            throw new Error(`Failed to send SMS to ${mobile}: ${error.message}`);
         }
     };
 

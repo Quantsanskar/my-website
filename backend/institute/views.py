@@ -1,7 +1,12 @@
 import json
 from django.shortcuts import render
 from django.http import JsonResponse
+from h11 import Response
 from rest_framework import generics, response, status
+from rest_framework.views import APIView
+
+from .utils import send_sms
+
 
 from .models import User, Admin, Student, Teacher
 from .serializers import (
@@ -47,7 +52,8 @@ class AdminListAPIView(generics.ListAPIView):
         return Admin.objects.all()
 
 
-class StudentListAPIView(generics.ListCreateAPIView):  # Changed to ListCreateAPIView for POST method
+# Changed to ListCreateAPIView for POST method
+class StudentListAPIView(generics.ListCreateAPIView):
     serializer_class = StudentSerializer
 
     def get_queryset(self):
@@ -59,6 +65,7 @@ class TeacherListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         return Teacher.objects.all()
+
 
 def authenticate_user(request):
     if request.method == 'POST':
@@ -76,31 +83,7 @@ def authenticate_user(request):
         if student.password == password:
             return JsonResponse({'username': username}, status=200)
         else:
-<<<<<<< HEAD
             return JsonResponse({"error": "Invalid password"}, status=400)
-
-
-# class SendSMSView(APIView):
-#     def post(self, request):
-#         to = request.data.get("to")
-#         body = request.data.get("body")
-#         send_sms(to, body)
-#         return response.Response({"message": "SMS sent successfully"})
-
-
-# @csrf_exempt
-# def SendSMSView(request):
-#     if request.method == "POST":
-#         data = json.loads(request.body)
-#         phone_number = data.get("phone_number")
-#         message = data.get("message")
-#         if phone_number and message:
-#             send_sms(phone_number, message)
-#             return JsonResponse({"message": "SMS sent successfully"})
-#         else:
-#             return JsonResponse({"error": "Invalid request body"}, status=400)
-#     else:
-#         return JsonResponse({"error": "Method not allowed"}, status=405)
 
 
 class SendSMSView(APIView):
@@ -109,11 +92,15 @@ class SendSMSView(APIView):
         message = request.data.get("message")
         if phone_number and message:
             send_sms(phone_number, message)
-            return response.Response({"message": "SMS sent successfully"})
+            return Response({"message": "SMS sent successfully"})
         else:
-            return response.Response(
-                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
-            )
-=======
-            return JsonResponse({'error': 'Invalid password'}, status=400)
->>>>>>> e1ad8d11197231cc35fb84b7c03cfaa3e78a47ad
+            return Response({"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, request):
+        phone_number = request.query_params.get("phone_number")
+        message = request.query_params.get("message")
+        if phone_number and message:
+            send_sms(phone_number, message)
+            return Response({"message": "SMS sent successfully"})
+        else:
+            return Response({"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST)

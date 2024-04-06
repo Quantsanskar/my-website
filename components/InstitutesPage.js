@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '../components/mainNavbar';
-import Footer from '../components/mainFooter';
+import MainNavbar from '../components/MainNavbar';
+import MainFooter from '../components/MainFooter';
 import '../styles/InstitutesPage.module.css';
 
 const InstitutesPage = () => {
@@ -14,7 +14,7 @@ const InstitutesPage = () => {
 
   return (
     <div className="institutes-page">
-      <Navbar />
+      <MainNavbar />
       <div className="content">
         <h2>List of Institutes</h2>
         <ul>
@@ -25,7 +25,7 @@ const InstitutesPage = () => {
         {/* Add navigation links or buttons for each institute */}
         <button onClick={handleClick}>A & G Academy</button>
       </div>
-      <Footer />
+      <MainFooter />
     </div>
   );
 };
