@@ -1,7 +1,8 @@
 import json
 from django.shortcuts import render
 from django.http import JsonResponse
-from h11 import Response
+
+# from h11 import Response
 from rest_framework import generics, response, status
 from rest_framework.views import APIView
 
@@ -68,20 +69,20 @@ class TeacherListAPIView(generics.ListAPIView):
 
 
 def authenticate_user(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         data = json.loads(request.body)
-        username = data.get('username', '')
-        password = data.get('password', '')
+        username = data.get("username", "")
+        password = data.get("password", "")
 
         # Fetch student from the database based on the username
         try:
             student = Student.objects.get(erpid=username)
         except Student.DoesNotExist:
-            return JsonResponse({'error': 'Invalid username'}, status=400)
+            return JsonResponse({"error": "Invalid username"}, status=400)
 
         # Check if the password matches
         if student.password == password:
-            return JsonResponse({'username': username}, status=200)
+            return JsonResponse({"username": username}, status=200)
         else:
             return JsonResponse({"error": "Invalid password"}, status=400)
 
@@ -92,9 +93,11 @@ class SendSMSView(APIView):
         message = request.data.get("message")
         if phone_number and message:
             send_sms(phone_number, message)
-            return Response({"message": "SMS sent successfully"})
+            return response.Response({"message": "SMS sent successfully"})
         else:
-            return Response({"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST)
+            return response.Response(
+                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
+            )
 
     def get(self, request):
         phone_number = request.query_params.get("phone_number")
@@ -103,4 +106,6 @@ class SendSMSView(APIView):
             send_sms(phone_number, message)
             return Response({"message": "SMS sent successfully"})
         else:
-            return Response({"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
+            )

@@ -34,7 +34,17 @@ class Student(models.Model):
     subjects = models.TextField(max_length=256, null=False)
     mobile = models.CharField(max_length=13, null=False, default="+91")
     email = models.EmailField(max_length=254, null=False)
-    
+
+
+class Marks(Student):
+    name = Student.objects.all().values("name")
+    username = Student.objects.all().values("username")
+    clas = Student.objects.all().values("clas")
+    mobile = Student.objects.all().values("mobile")
+    topic = models.CharField(max_length=256, default="topic")
+    total_marks = models.IntegerField(default=00)
+    marks_obtained = models.IntegerField(default=00)
+
 
 class Teacher(models.Model):
     name = models.CharField(max_length=56)
