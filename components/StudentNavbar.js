@@ -10,6 +10,8 @@ const Navbar = ({ scrollToLectures, scrollToNotes, scrollToTests }) => {
 
     const handleLogout = () => {
         router.push('/home');
+        localStorage.clear();
+        
     };
     const [isFormOpen, setIsFormOpen] = useState(false);
 

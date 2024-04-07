@@ -2,7 +2,11 @@
 
 .lecturesContainer {
     margin-top: 40px;
-    width: 1501px;
+    width: 100%;
+}
+.lecturesContainer h2{
+    text-align: center;
+    font-size: 300%;
 }
 
 .subjectContainer {

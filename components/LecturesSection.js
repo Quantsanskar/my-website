@@ -53,7 +53,7 @@ const handleSearch = (e) => {
 const getFilteredLectures = (studentSubjects) => {
     const dummyLectures = [
         {
-            subject: 'Physics',
+            subject: 'Physics11',
             chapters: [
                 {
                     name: 'Mechanics',
@@ -72,7 +72,7 @@ const getFilteredLectures = (studentSubjects) => {
             ]
         },
         {
-            subject: 'Chemistry',
+            subject: 'Chemistry11',
             chapters: [
                 {
                     name: 'Organic Chemistry',
@@ -91,7 +91,7 @@ const getFilteredLectures = (studentSubjects) => {
             ]
         },
         {
-            subject: 'Biology',
+            subject: 'Biology11',
             chapters: [
                 {
                     name: 'Cell Biology',
@@ -110,7 +110,7 @@ const getFilteredLectures = (studentSubjects) => {
             ]
         },
         {
-            subject: 'Maths',
+            subject: 'Maths11',
             chapters: [
                 {
                     name: 'Set',
@@ -153,13 +153,13 @@ const filterLectures = (query) => {
 return (
     <div className={styles.lecturesContainer}>
         <h2>Lectures</h2>
-        <input
+        {/* <input
             type="text"
             placeholder="Search by lecture name or chapter"
             className={styles.searchInput}
             value={searchQuery}
             onChange={handleSearch}
-        />
+        /> */}
         {filteredLectures.map((subject, subjectIndex) => (
             <div key={subjectIndex}>
                 <h3>{subject.subject}</h3>

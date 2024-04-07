@@ -11,27 +11,33 @@ const AdminForm = ({ isFormOpen, closeForm }) => {
     const [error, setError] = useState('');
     const router = useRouter();
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-          // Fetch all usernames and passwords from the backend
-          const response = await axios.get('http://127.0.0.1:8000/api/admin');
-          const admins = response.data;
+      e.preventDefault();
+      try {
+        // Send the username and password to the backend
+        await axios.post('http://127.0.0.1:8000/api/user', { username, password });
+        // Fetch all usernames and passwords from the backend
+        const response = await axios.get('http://127.0.0.1:8000/api/admin');
+        const admins = response.data;
     
-          // Iterate through each student to find a matching username and password
-          for (const admin of admins) {
-            if (admin.username === username && admin.password === password) {
-              
-              router.push('/admin');
-              return; // Exit the loop
-            }
+        console.log('Response Data:', admins); // Log the response data
+    
+        // Iterate through each student to find a matching username and password
+        for (const admin of admins) {
+          if (admin.username === username && admin.password === password) {
+            // If a match is found, redirect to the admin dashboard
+            localStorage.setItem('username', username);
+            router.push('/admin');
+            return; // Exit the loop
           }
-          // If no match is found, display an error message
-          setError('Invalid username or password');
-        } catch (error) {
-          console.error('Error:', error);
-          setError('An unexpected error occurred');
         }
-      };
+    
+        // If no match is found, display an error message
+        setError('Invalid username or password');
+      } catch (error) {
+        console.error('Error:', error);
+        setError('An unexpected error occurred');
+      }
+    };
 
     return (
         <div className={`${styles.adminFormOverlay} ${isFormOpen ? styles.showForm : ''}`}>

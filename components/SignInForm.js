@@ -17,10 +17,14 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Send the username and password to the backend
+      await axios.post('http://127.0.0.1:8000/api/user', { username, password });
       // Fetch all usernames and passwords from the backend
       const response = await axios.get('http://127.0.0.1:8000/api/student');
       const students = response.data;
-
+  
+      console.log('Response Data:', students); // Log the response data
+  
       // Iterate through each student to find a matching username and password
       for (const student of students) {
         if (student.username === username && student.password === password) {
@@ -30,14 +34,13 @@ const SignInForm = ({ isSignInOpen, closeSignIn }) => {
           return; // Exit the loop
         }
       }
-
+  
       // If no match is found, display an error message
       setError('Invalid username or password');
     } catch (error) {
       console.error('Error:', error);
       setError('An unexpected error occurred');
     }
-    // closeSignIn();
   };
 
   return (

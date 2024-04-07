@@ -1,6 +1,6 @@
-// TestsSection.js
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import axios from 'axios'; // Import axios for making HTTP requests
 import styles from '../styles/TestsSection.module.css'; // Import your CSS module file
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -12,70 +12,76 @@ const TestsSection = () => {
     const [numPages, setNumPages] = useState(null);
 
     useEffect(() => {
-        // Fetch PDF data and set it to the pdfs state
+        const fetchStudentData = async () => {
+            try {
+                // Fetch student data from backend
+                const response = await axios.get('http://127.0.0.1:8000/api/student');
+                const student = response.data.find(item => item.username === localStorage.getItem('username'));
+
+                if (student) {
+                    // Filter tests based on student's subjects
+                    const filteredTests = getFilteredTests(student.subjects);
+                    setPdfs(filteredTests);
+                } else {
+                    throw new Error('Student not found');
+                }
+            } catch (error) {
+                console.error('Error fetching student data:', error);
+            }
+        };
+
+        // Call the fetchStudentData function only if username is available in localStorage
+        const username = localStorage.getItem('username');
+        if (username) {
+            fetchStudentData();
+        }
+    }, []);
+
+    const getFilteredTests = (studentSubjects) => {
         // Dummy PDF data
         const dummyPdfs = [
             {
-                subject: 'Physics',
+                subject: 'Physics11',
                 tests: [
                     { title: 'Electricity', pdfUrl: '/Notes/question paper 1.pdf' },
                     { title: 'Mechanical', pdfUrl: '/Tests/Physics_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 3 Test 1', pdfUrl: '/Tests/Physics_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 4 Test 1', pdfUrl: '/Tests/Physics_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 4 Test 1', pdfUrl: '/Tests/Physics_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 4 Test 1', pdfUrl: '/Tests/Physics_Chapter_2_Test_1.pdf' },
                     // Add more physics tests as needed
                 ]
             },
             {
-                subject: 'Chemistry',
+                subject: 'Chemistry11',
                 tests: [
                     { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
                     { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
                     // Add more chem tests as needed
                 ]
             },
             {
-                subject: 'Biology',
+                subject: 'Biology11',
                 tests: [
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    // Add more chem tests as needed
+                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Biology_Chapter_1_Test_1.pdf' },
+                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Biology_Chapter_2_Test_1.pdf' },
+                    // Add more bio tests as needed
                 ]
             },
             {
-                subject: 'Maths',
+                subject: 'Maths11',
                 tests: [
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_1_Test_1.pdf' },
-                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Chemistry_Chapter_2_Test_1.pdf' },
-                    // Add more chem tests as needed
+                    { title: 'Chapter 1 Test 1', pdfUrl: '/Tests/Maths_Chapter_1_Test_1.pdf' },
+                    { title: 'Chapter 2 Test 1', pdfUrl: '/Tests/Maths_Chapter_2_Test_1.pdf' },
+                    // Add more maths tests as needed
                 ]
             },
             // Add more subjects with their respective tests
         ];
-        setPdfs(dummyPdfs);
-    }, []);
 
-    // Filter PDFs based on search query
-    const filteredPdfs = pdfs.filter(subject =>
-        subject.tests.some(test =>
-            test.title.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-    );
+        // Filter tests based on the student's subjects
+        const filteredTests = dummyPdfs.filter(test =>
+            studentSubjects.includes(test.subject)
+        );
+        return filteredTests;
+    };
 
-    // Handle search query change
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
     };
@@ -84,7 +90,6 @@ const TestsSection = () => {
         setSelectedPdf(pdf);
     };
 
-    // Handle close PDF click event
     const handleClosePdf = () => {
         setSelectedPdf(null);
     };
@@ -96,7 +101,7 @@ const TestsSection = () => {
     return (
         <div className={styles.container}>
             <h2>Tests</h2>
-            <div className={styles.searchContainer}>
+            {/* <div className={styles.searchContainer}>
                 <input
                     type="text"
                     placeholder="Search test papers..."
@@ -104,9 +109,9 @@ const TestsSection = () => {
                     onChange={handleSearchChange}
                     className={styles.searchInput}
                 />
-            </div>
+            </div> */}
             <div className={styles.subjectContainer}>
-                {filteredPdfs.map((subject, index) => (
+                {pdfs.map((subject, index) => (
                     <div key={index} className={styles.subjectSection}>
                         <h3>{subject.subject}</h3>
                         <div className={styles.testsList}>

@@ -6,10 +6,12 @@ import styles from '../styles/AdminDashboard.module.css'; // Import CSS file for
 
 const AdminDashboard = () => {
   const router = useRouter();
+
   const [greeting, setGreeting] = useState('');
 
   const handleLogout = () => {
     router.push('/home');
+    localStorage.clear();
   };
 
   useEffect(() => {
@@ -19,11 +21,31 @@ const AdminDashboard = () => {
       greeting = 'Good Morning';
     } else if (currentTime < 18) {
       greeting = 'Good Afternoon';
-    } else {
+    } else if (currentTime < 21) {
       greeting = 'Good Evening';
+    } else if (currentTime < 24) {
+      greeting = 'Good Night'
     }
+
     setGreeting(greeting); // Update the greeting state
   }, []);
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        // Check if user is authenticated (you need to implement this logic)
+        const isAuthenticated = localStorage.getItem('username'); // Example: Check for authentication token
+
+        if (!isAuthenticated) {
+          router.push('/home'); // Redirect to sign-in page if not authenticated
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    // Check authentication when the component mounts
+    checkAuthentication();
+  }, [router]);
 
   return (
     <div className={styles.adminDashboard}>
@@ -34,7 +56,7 @@ const AdminDashboard = () => {
             <li onClick={() => router.push('/attendance')}>Attendance</li>
             <li>Students List</li>
             <li>Teachers List</li>
-            <li>Upload Marks</li>
+            <li onClick={()=> router.push('/AdminUploadMarks')}>Upload Marks</li>
             <button className={styles.navbarLogOutButton} onClick={handleLogout}>Log Out</button>
           </ul>
         </nav>

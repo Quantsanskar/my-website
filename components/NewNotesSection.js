@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import axios from 'axios'; // Import axios for making HTTP requests
 import styles from '../styles/NewNotesSection.module.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -9,72 +10,78 @@ const NotesSection = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedPdf, setSelectedPdf] = useState(null);
     const [numPages, setNumPages] = useState(null);
-    // const pdfViewerRef = useRef(null);
+
     useEffect(() => {
-        // Fetch PDF data and set it to the pdfs state
+        const fetchStudentData = async () => {
+            try {
+                // Fetch student data from backend
+                const response = await axios.get('http://127.0.0.1:8000/api/student');
+                const student = response.data.find(item => item.username === localStorage.getItem('username'));
+
+                if (student) {
+                    // Filter notes based on student's subjects
+                    const filteredNotes = getFilteredNotes(student.subjects);
+                    setPdfs(filteredNotes);
+                } else {
+                    throw new Error('Student not found');
+                }
+            } catch (error) {
+                console.error('Error fetching student data:', error);
+            }
+        };
+
+        // Call the fetchStudentData function only if username is available in localStorage
+        const username = localStorage.getItem('username');
+        if (username) {
+            fetchStudentData();
+        }
+    }, []);
+
+    const getFilteredNotes = (studentSubjects) => {
         // Dummy PDF data
         const dummyPdfs = [
             {
-                subject: 'Physics',
+                subject: 'Physics11',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more physics notes as needed
                 ]
             },
             {
-                subject: 'Chemistry',
+                subject: 'Chemistry11',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more chem notes as needed
                 ]
             },
             {
-                subject: 'Biology',
+                subject: 'Biology11',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more bio notes as needed
                 ]
             },
             {
-                subject: 'Maths',
+                subject: 'Maths11',
                 notes: [
                     { title: 'Chapter 1 Note 1', pdfUrl: '/Notes/2 Marks ( Pharmaceutics ).pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
-                    { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     { title: 'Chapter 2 Note 1', pdfUrl: '/pdfs/physics_note_2.pdf' },
                     // Add more maths notes as needed
                 ]
             },
             // Add more subjects with their respective notes
         ];
-        setPdfs(dummyPdfs);
-    }, []);
 
-    // Filter PDFs based on search query
-    const filteredPdfs = pdfs.filter(subject =>
-        subject.notes.some(note =>
-            note.title.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-    );
+        // Filter notes based on the student's subjects
+        const filteredNotes = dummyPdfs.filter(note =>
+            studentSubjects.includes(note.subject)
+        );
+        return filteredNotes;
+    };
 
-    // Handle search query change
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
     };
@@ -83,7 +90,6 @@ const NotesSection = () => {
         setSelectedPdf(pdf);
     };
 
-    // Handle close PDF click event
     const handleClosePdf = () => {
         setSelectedPdf(null);
     };
@@ -95,7 +101,7 @@ const NotesSection = () => {
     return (
         <div className={styles.container}>
             <h2>Notes</h2>
-            <div className={styles.searchContainer}>
+            {/* <div className={styles.searchContainer}>
                 <input
                     type="text"
                     placeholder="Search lecture notes..."
@@ -103,9 +109,9 @@ const NotesSection = () => {
                     onChange={handleSearchChange}
                     className={styles.searchInput}
                 />
-            </div>
+            </div> */}
             <div className={styles.subjectContainer}>
-                {filteredPdfs.map((subject, index) => (
+                {pdfs.map((subject, index) => (
                     <div key={index} className={styles.subjectSection}>
                         <h3>{subject.subject}</h3>
                         <div className={styles.notesList}>

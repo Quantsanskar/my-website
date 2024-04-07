@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from '../styles/LectureVideo.module.css';
 
-const LectureVideo = ({ title, description, videoUrl }) => {
+const LectureVideo = ({ title, videoUrl }) => {
     return (
         <div className={styles.videoItem}>
             <h3 className={styles.videoTitle}>{title}</h3>
-            <p className={styles.videoDescription}>{description}</p>
             <div className={styles.videoPlayer}>
                 <iframe
                     title={title}

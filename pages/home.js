@@ -36,8 +36,14 @@ const MainPage = () => {
                         <li key={item.id}>{item.name} - {item.description}</li>
                     ))}
                 </ul>
-                <Navbar/>
-                <CharacterComponent/>
+                <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '999' }}>
+                    <Link href="/" style={{ color: 'white', backgroundColor: 'burlywood', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none' }}>
+                        StudyPhora
+                    </Link>
+                </div>
+                <Navbar />
+                <CharacterComponent />
+
                 <CenteredTitle />
                 <div
                     style={{

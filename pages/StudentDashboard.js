@@ -1,4 +1,6 @@
-import { React, useState, useRef } from 'react';
+import { React, useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 import StudentNavbar from '../components/StudentNavbar';
 import StudentAboutSection from "../components/StudentAboutSection";
 import AdmissionForm from '../components/AdmissionForm';
@@ -9,6 +11,7 @@ import Footer from '../components/Footer';
 import styles from '../styles/StudentDashboard.module.css'; // Import your CSS module
 
 const StudentDashboard = () => {
+  const router = useRouter();
   const [showAdmissionForm, setShowAdmissionForm] = useState(false);
   const lecturesRef = useRef(null);
   const notesRef = useRef(null);
@@ -33,6 +36,23 @@ const StudentDashboard = () => {
   const scrollToTests = () => {
     testsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        // Check if user is authenticated (you need to implement this logic)
+        const isAuthenticated = localStorage.getItem('username'); // Example: Check for authentication token
+
+        if (!isAuthenticated) {
+          router.push('/home'); // Redirect to sign-in page if not authenticated
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    // Check authentication when the component mounts
+    checkAuthentication();
+  }, [router]);
 
   return (
     <div className={styles.container}>

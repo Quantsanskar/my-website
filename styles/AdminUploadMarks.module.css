@@ -1,0 +1,74 @@
+/* AdminUploadMarks.module.css */
+.uploadMarksContainer {
+    margin: 20px;
+}
+
+.uploadMarksContainer h2 {
+    font-size: 24px;
+}
+
+.uploadMarksContainer input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.classSection {
+    margin-bottom: 30px;
+}
+
+.classSection h3 {
+    font-size: 20px;
+}
+
+.studentSections {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.studentSection {
+    width: calc(33.33% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.studentSection h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.marksForm {
+    margin-top: 10px;
+}
+
+.marksForm input {
+    width: calc(33.33% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: auto; /* Auto margin to push the button to the right */
+    margin-right: auto; /* Auto margin to push the button to the left */
+    display: block; /* Ensure the button takes up the full width */
+    animation: pulse 2s infinite; /* Apply the pulse animation */
+}
+.submitButton:hover {
+    background-color: #0056b3;
+    animation: none; /* Disable animation on hover */
+}
