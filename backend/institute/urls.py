@@ -5,6 +5,7 @@ from .views import (
     StudentListAPIView,
     TeacherListAPIView,
     SendSMSView,
+    SendEmailView,
 )
 
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path("student", StudentListAPIView.as_view(), name="student"),
     path("teacher", TeacherListAPIView.as_view(), name="teacher"),
     path("send-sms-request/", SendSMSView.as_view(), name="send_sms"),
+    path("send-email/", SendEmailView.as_view(), name="send-email"),
 ]

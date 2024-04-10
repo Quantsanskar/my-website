@@ -74,10 +74,8 @@ const AttendancePage = () => {
                             await sendSMS(student.mobile, message);
 
                             console.log(`Message sent to ${student.name}`);
-                            window.location.reload();
                         } else {
                             console.error(`Mobile number not found for student ${student.name}`);
-                            window.location.reload();
                         }
                     }
 
@@ -85,16 +83,12 @@ const AttendancePage = () => {
                     localStorage.removeItem('absentStudents');
                 } else {
                     console.error('Absent student list is not an array');
-                    window.location.reload();
                 }
             } else {
                 console.error('Absent student list is null or undefined');
-                window.location.reload();
             }
         } catch (error) {
             console.error('Failed to send messages to absent students:', error);
-            window.location.reload();
-
         }
     };
 
@@ -109,7 +103,6 @@ const AttendancePage = () => {
         } catch (error) {
             // Handle any errors that occur during the SMS sending process
             throw new Error(`Failed to send SMS to ${mobile}: ${error.message}`);
-            window.location.reload();
         }
     };
 

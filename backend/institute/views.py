@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from rest_framework import generics, response, status
 from rest_framework.views import APIView
 
-from .utils import send_sms
+from .utils import send_sms, send_email
 
 
 from .models import User, Admin, Student, Teacher
@@ -104,8 +104,30 @@ class SendSMSView(APIView):
         message = request.query_params.get("message")
         if phone_number and message:
             send_sms(phone_number, message)
-            return Response({"message": "SMS sent successfully"})
+            return response.Response({"message": "SMS sent successfully"})
         else:
-            return Response(
+            return response.Response(
+                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+
+class SendEmailView(APIView):
+    def post(self, request):
+        message = request.data.get("message")
+        if message:
+            send_email(message)
+            return response.Response({"message": "SMS sent successfully"})
+        else:
+            return response.Response(
+                {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+    def get(self, request):
+        message = request.query_params.get("message")
+        if message:
+            send_email(message)
+            return response.Response({"message": "SMS sent successfully"})
+        else:
+            return response.Response(
                 {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
             )
