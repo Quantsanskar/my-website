@@ -2,7 +2,7 @@ import { React, useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import StudentNavbar from '../components/StudentNavbar';
-import StudentAboutSection from "../components/StudentAboutSection";
+// import StudentAboutSection from "../components/StudentAboutSection";
 import AdmissionForm from '../components/AdmissionForm';
 import LecturesSection from '../components/LecturesSection';
 import NewNotesSection from '../components/NewNotesSection';
@@ -61,7 +61,7 @@ const StudentDashboard = () => {
         <AdmissionForm onClose={handleCloseAdmissionForm} />
       ) : (
         <div>
-          <StudentAboutSection />
+          {/* <StudentAboutSection /> */}
           <div ref={lecturesRef}>
             <LecturesSection />
           </div>
