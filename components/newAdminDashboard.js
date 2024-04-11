@@ -61,9 +61,9 @@ const AdminDashboard = () => {
           </ul>
         </nav>
       </div>
-      <div className={styles.mainContent}>
-        {/* Your fancy content goes here */}
-      </div>
+      {/* <div className={styles.mainContent}>
+         Your fancy content goes here 
+      </div> */}
     </div>
   );
 };

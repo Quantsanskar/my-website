@@ -1,37 +1,33 @@
-/* styles.css */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset default margin and padding */
+* {
     margin: 0;
     padding: 0;
-    background-color: #222;
-    color: #fff;
-    line-height: 1.6;
-    transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
-header {
+/* Apply custom fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed; /* Stick the navbar at the top */
+    top: 0; /* Align the navbar at the top of the page */
+    width: 100%; /* Occupy the full width of the viewport */
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 0.5em 0;
+    z-index: 1000; /* Ensure the navbar stays above other content */
 }
 
-#heading-container {
-    background-color: #333;
-    padding: 5px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    top: 0;
-}
 
-.navbar {
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
-    background-color: #333;
+    padding: 0 20px;
 }
 
 .navbar a {
@@ -86,11 +82,12 @@ header {
 }
 
 .navbar .logo {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     color: #FFD600;
 }
 
+/* Hero section styles */
 .hero {
     background-image: url('https://source.unsplash.com/1600x900/?education');
     background-size: cover;
@@ -116,6 +113,7 @@ header {
     color: #eee;
 }
 
+/* Feature section styles */
 .features {
     display: flex;
     justify-content: space-around;
@@ -146,6 +144,7 @@ header {
     color: #aaa;
 }
 
+/* Why choose section styles */
 .why-choose {
     background-color: #444;
     padding: 4em 0;
@@ -179,6 +178,7 @@ header {
     color: #aaa;
 }
 
+/* Call to action section styles */
 .cta {
     background-color: #333;
     color: #fff;
@@ -192,21 +192,24 @@ header {
     color: #FFD600;
 }
 
-.cta a {
+.cta button {
     display: inline-block;
     padding: 1em 2em;
     background-color: #FFD600;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.cta a:hover {
+.cta button:hover {
     background-color: #555;
     color: #fff;
 }
 
+/* Testimonial section styles */
 .testimonial-section {
     text-align: center;
     padding: 3em 0;
@@ -230,6 +233,7 @@ header {
     color: #FFD600;
 }
 
+/* Join us section styles */
 .join-us {
     background-image: url('https://source.unsplash.com/1600x900/?students');
     background-size: cover;
@@ -254,21 +258,24 @@ header {
     color: #eee;
 }
 
-.join-us a {
+.join-us button {
     display: inline-block;
     padding: 1em 2em;
     background-color: #FFD600;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.join-us a:hover {
+.join-us button:hover {
     background-color: #555;
     color: #fff;
 }
 
+/* Fade in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -276,5 +283,74 @@ header {
 
     to {
         opacity: 1;
+    }
+}
+
+/* Container for responsive layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1em 0;
+    }
+
+    .navbar .container {
+        padding: 0 10px;
+    }
+
+    .navbar .logo {
+        font-size: 1.2em;
+    }
+
+    .navbar a {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .feature {
+        padding: 1.5em;
+        margin: 1em 0;
+    }
+
+    .why-choose .reason {
+        padding: 1.5em;
+        margin: 1em 0;
+    }
+
+    .cta {
+        padding: 1em;
+    }
+
+    .cta button {
+        padding: 0.8em 1.5em;
+    }
+
+    .testimonial-text {
+        font-size: 0.9em;
+    }
+
+    .join-us h2 {
+        font-size: 1.5em;
+    }
+
+    .join-us p {
+        font-size: 0.9em;
+    }
+
+    .join-us button {
+        padding: 0.8em 1.5em;
     }
 }

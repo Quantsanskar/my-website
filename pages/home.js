@@ -10,23 +10,31 @@ import MentorsSection from '../components/MentorsSection';
 import AdmissionButton from '../components/AdmissionButton';
 import AdmissionForm from '../components/AdmissionForm';
 import CharacterComponent from '../components/CharacterComponent';
+import SignInForm from '../components/SignInForm'; // Import the SignInForm component
 import Footer from '../components/Footer';
 
 
 const MainPage = () => {
     const [data, setData] = useState([]);
+    const [showAdmissionForm, setShowAdmissionForm] = useState(false);
+    const [isSignInOpen, setIsSignInOpen] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:8000')
             // .then(response => setData(response.data))
             .catch(error => console.error(error));
     }, []);
-    const [showAdmissionForm, setShowAdmissionForm] = useState(false);
 
     const toggleAdmissionForm = () => {
         setShowAdmissionForm(!showAdmissionForm);
     };
-
+    const toggleSignIn = () => {
+        setIsSignInOpen(!isSignInOpen);
+      };
+    
+      const closeSignIn = () => {
+        setIsSignInOpen(false);
+      };
 
     return (
         <ErrorBoundary>
@@ -43,7 +51,6 @@ const MainPage = () => {
                 </div>
                 <Navbar />
                 <CharacterComponent />
-
                 <CenteredTitle />
                 <div
                     style={{
@@ -56,20 +63,25 @@ const MainPage = () => {
                         <HomePage />
                     </div>
                     <AdmissionButton onClick={toggleAdmissionForm} />
+                    {/* Reactive element for sign-in */}
+                    <div style={{ marginTop: '1rem', cursor: 'pointer', color: 'blue' }} onClick={toggleSignIn}>
+                        Are you an existing student? Sign in here.
+                    </div>
+                    
                 </div>
 
                 <div id="location">
-
                     <LocationSection />
                 </div>
                 <div id="mentors">
                     <MentorsSection />
                 </div>
                 <Footer />
+                <SignInForm isSignInOpen={isSignInOpen} closeSignIn={closeSignIn} />
                 {showAdmissionForm && <AdmissionForm onClose={toggleAdmissionForm} />}
-
+                
             </div>
-        </ErrorBoundary >
+        </ErrorBoundary>
     );
 };
 

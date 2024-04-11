@@ -1,12 +1,31 @@
 // AdmissionForm.js
-import React from 'react';
 
+import React from 'react';
+import axios from 'axios';
 
 const AdmissionForm = ({ onClose }) => {
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic
-        console.log('Form submitted!');
+        const message = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            phone: e.target.phone.value,
+            message: e.target.message.value
+        };
+
+        try {
+            // Send form data to the backend API using Axios
+            const response = await axios.post('http://127.0.0.1:8000/api/send-email/', message);
+
+            if (response.status === 200) {
+                console.log('Form submitted successfully');
+            } else {
+                console.error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+
         onClose(); // Close the form
     };
 
