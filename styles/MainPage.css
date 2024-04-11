@@ -89,7 +89,7 @@ body {
 
 /* Hero section styles */
 .hero {
-    background-image: url('https://source.unsplash.com/1600x900/?education');
+    background-image: url('/Images/main_img2.jpeg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -112,6 +112,10 @@ body {
     margin: 0 auto;
     color: #eee;
 }
+
+
+
+
 
 /* Feature section styles */
 .features {
@@ -235,7 +239,7 @@ body {
 
 /* Join us section styles */
 .join-us {
-    background-image: url('https://source.unsplash.com/1600x900/?students');
+    background-image: url('/Images/main_img1.jpeg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -243,6 +247,7 @@ body {
     padding: 3em;
     margin-top: 2em;
     border-radius: 10px;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .join-us h2 {
