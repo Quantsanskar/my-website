@@ -32,11 +32,12 @@ const Index = () => {
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
+                        <a href="/teachers">Teachers</a>
                         <div className="dropdown">
                             <a href="#" className="dropbtn">Institutes</a>
                             <div className="dropdown-content">
                                 <a onClick={handleNavigateToAandG}>A & G Academy</a>
-                                <a href="institute2.html">Institute 2</a>
+                                <a href="/Institute2">Institute 2</a>
                             </div>
                         </div>
                     </nav>

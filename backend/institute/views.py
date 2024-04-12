@@ -61,7 +61,7 @@ class StudentListAPIView(generics.ListCreateAPIView):
         return Student.objects.all()
 
 
-class TeacherListAPIView(generics.ListAPIView):
+class TeacherListAPIView(generics.ListCreateAPIView):
     serializer_class = TeacherSerializer
 
     def get_queryset(self):
