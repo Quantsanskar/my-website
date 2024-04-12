@@ -12,14 +12,18 @@ body {
 
 /* Navbar styles */
 .navbar {
-    position: fixed; /* Stick the navbar at the top */
-    top: 0; /* Align the navbar at the top of the page */
-    width: 100%; /* Occupy the full width of the viewport */
+    position: fixed;
+    /* Stick the navbar at the top */
+    top: 0;
+    /* Align the navbar at the top of the page */
+    width: 100%;
+    /* Occupy the full width of the viewport */
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 0.5em 0;
-    z-index: 1000; /* Ensure the navbar stays above other content */
+    z-index: 1000;
+    /* Ensure the navbar stays above other content */
 }
 
 
@@ -359,3 +363,4 @@ body {
         padding: 0.8em 1.5em;
     }
 }
+
