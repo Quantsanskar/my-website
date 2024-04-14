@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import { useRouter } from 'next/router';
 import '../styles/MainPage.css'; // Import the CSS file
 import AdmissionForm from '../components/AdmissionForm';
@@ -8,6 +6,7 @@ import AdmissionForm from '../components/AdmissionForm';
 const Index = () => {
     const router = useRouter();
     const [isFormOpen, setIsFormOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Track the state of the menu
 
     const openForm = () => {
         setIsFormOpen(true);
@@ -22,12 +21,22 @@ const Index = () => {
         router.push('/home');
     };
 
+    // Toggle the menu state
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <>
-            <header className="navbar">
+            <header className={`navbar ${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
                 <div className="container">
-                    <h1 className="logo">StudyPhora</h1>
-                    <nav>
+                    <h1 onClick={()=> router.push('/')} className="logo">StudyPhora</h1>
+                    <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}> {/* Add active class when menu is open */}
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </button>
+                    <nav className={`${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
                         <a href="#home">Home</a>
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
@@ -36,13 +45,20 @@ const Index = () => {
                         <div className="dropdown">
                             <a href="#" className="dropbtn">Institutes</a>
                             <div className="dropdown-content">
-                                <a onClick={handleNavigateToAandG}>A & G Academy</a>
+                                <a onClick={handleNavigateToAandG} >A & G Academy</a>
                                 <a href="/Institute2">Institute 2</a>
                             </div>
                         </div>
                     </nav>
                 </div>
             </header>
+
+            <section className="logo-section">
+                <div className="container">
+                    <img src="/Images/Logo.png" alt="StudyPhora Logo" className="logo-image" />
+                    <h2 className="tagline">`Transforming Institutes, Transforming Future`</h2>
+                </div>
+            </section>
 
             <section className="hero" id="home">
                 <div className="container">
