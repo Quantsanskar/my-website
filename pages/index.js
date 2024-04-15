@@ -30,7 +30,7 @@ const Index = () => {
         <>
             <header className={`navbar ${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
                 <div className="container">
-                    <h1 onClick={()=> router.push('/')} className="logo">StudyPhora</h1>
+                    {/* <h1 onClick={()=> router.push('/')} className="logo">StudyPhora</h1> */}
                     <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}> {/* Add active class when menu is open */}
                         <span className="bar"></span>
                         <span className="bar"></span>
@@ -55,7 +55,7 @@ const Index = () => {
 
             <section className="logo-section">
                 <div className="container">
-                    <img src="/Images/Logo.png" alt="StudyPhora Logo" className="logo-image" />
+                    <img src="Images/FINAL.png" alt="StudyPhora Logo" className="logo-image" />
                     <h2 className="tagline">`Transforming Institutes, Transforming Future`</h2>
                 </div>
             </section>

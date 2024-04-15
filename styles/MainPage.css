@@ -502,96 +502,103 @@ body {
 
     .navbar .container {
         padding: 0 10px;
-    }
-
-    .navbar .logo {
-        order: 2;
-        /* Move logo to the right */
-        font-size: 1.2em;
-        /* Adjusted font size */
-    }
-
-    .navbar a {
-        order: 1;
-        /* Move navbar links to the left */
-        padding: 10px;
-        /* Adjusted padding */
-        font-size: 0.9em;
-        display: none;
-        /* Hide navbar links by default */
-    }
-
-    .navbar .dropdown-content {
-        position: static;
-        /* Adjust position for dropdown content */
-        display: none;
-        width: auto;
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    .navbar .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Show the hamburger menu button */
-    .hamburger {
-        order: 1;
-        /* Move hamburger button to the left */
-        display: block;
-    }
-
-    /* Rotate bars to form an 'X' when menu is open */
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    /* Adjusted styles for small screens */
-    .navbar {
-        flex-direction: row;
-        /* Stack items horizontally */
-        justify-content: space-between;
-        /* Adjusted alignment */
-        padding: 1em 20px;
-        /* Adjusted padding */
-        height: auto;
-        /* Set height to auto to accommodate content */
-    }
-
-    .navbar.active {
+        top: 0;
+        left: 0;
         width: 100%;
-        /* Ensure navbar covers entire screen width */
+        background-color: #323232;
+        color: gold;
+        
     }
 
-    .navbar.active a {
-        display: block;
-        /* Display links as block elements */
-        padding: 15px 20px;
-        /* Adjust padding */
-        text-align: left;
-        /* Align text to the left */
-    }
 
-    .navbar.active .dropdown-content {
-        position: relative;
-        /* Restore default position */
-        display: none;
-        /* Hide dropdown content */
-        margin-left: 20px;
-        /* Add margin for proper spacing */
-    }
+.navbar .logo {
+    order: 2;
+    /* Move logo to the right */
+    font-size: 1.2em;
+    /* Adjusted font size */
+}
 
-    .navbar.active .container {
-        align-items: flex-start;
-    }
+.navbar a {
+    order: 1;
+    /* Move navbar links to the left */
+    padding: 10px;
+    /* Adjusted padding */
+    font-size: 0.9em;
+    display: none;
+    /* Hide navbar links by default */
+}
+
+.navbar .dropdown-content {
+    position: static;
+    /* Adjust position for dropdown content */
+    display: none;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Show the hamburger menu button */
+.hamburger {
+    order: 1;
+    /* Move hamburger button to the left */
+    display: block;
+}
+
+/* Rotate bars to form an 'X' when menu is open */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Adjusted styles for small screens */
+.navbar {
+    flex-direction: row;
+    /* Stack items horizontally */
+    justify-content: space-between;
+    /* Adjusted alignment */
+    padding: 1em 20px;
+    /* Adjusted padding */
+    height: auto;
+    /* Set height to auto to accommodate content */
+}
+
+.navbar.active {
+    width: 100%;
+    /* Ensure navbar covers entire screen width */
+}
+
+.navbar.active a {
+    display: block;
+    /* Display links as block elements */
+    padding: 15px 20px;
+    /* Adjust padding */
+    text-align: left;
+    /* Align text to the left */
+}
+
+.navbar.active .dropdown-content {
+    position: relative;
+    /* Restore default position */
+    display: none;
+    /* Hide dropdown content */
+    margin-left: 20px;
+    /* Add margin for proper spacing */
+}
+
+.navbar.active .container {
+    align-items: flex-start;
+}
 }
 
 .logo-section {
@@ -602,12 +609,13 @@ body {
 }
 
 .logo-image {
-    width: 100%;
+    width: 35%;
     max-width: 600px;
     height: auto;
     margin-bottom: 1em;
-    animation: fadeIn 5s ease-in-out forwards, pulse 5s ease-in-out infinite;
-    /* Combine fadeIn animation and continuous pulse animation */
+    animation: fadeIn 5s ease-in-out forwards
+        /* pulse 5s ease-in-out infinite;  */
+        /* Combine fadeIn animation and continuous pulse animation */
 }
 
 @keyframes pulse {
@@ -627,7 +635,10 @@ body {
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .logo-image {
+        margin-top: 10px;
         max-width: 400px;
+        width: 52%;
+        height: auto;
         /* Adjust maximum width for smaller screens */
     }
 }
