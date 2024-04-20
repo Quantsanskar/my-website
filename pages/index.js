@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import '../styles/MainPage.css'; // Import the CSS file
 import AdmissionForm from '../components/AdmissionForm';
+import Link from 'next/link'; // Import Link from next/link
+import Image from 'next/image'; // Import Image from next/image
 
 const Index = () => {
     const router = useRouter();
@@ -17,14 +19,15 @@ const Index = () => {
         document.body.classList.remove('decreased-light');
     };
 
-    const handleNavigateToAandG = () => {
-        router.push('/home');
-    };
 
+    const reloadWindow = () => {
+        window.location.reload();
+    };
     // Toggle the menu state
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
 
     return (
         <>
@@ -37,16 +40,16 @@ const Index = () => {
                         <span className="bar"></span>
                     </button>
                     <nav className={`${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
-                        <a href="#home">Home</a>
+                        <Link href="/" onClick={reloadWindow}>Home</Link>
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
-                        <a href="/teachers">Teachers</a>
+                        <Link href="/teachers">Teachers</Link>
                         <div className="dropdown">
-                            <a href="#" className="dropbtn">Institutes</a>
+                            <Link href="#" className="dropbtn">Institutes</Link>
                             <div className="dropdown-content">
-                                <a onClick={handleNavigateToAandG} >A & G Academy</a>
-                                <a href="/Institute2">Institute 2</a>
+                                <Link href="/home" >A & G Academy</Link>
+                                <Link href="/Institute2">Institute 2</Link>
                             </div>
                         </div>
                     </nav>
@@ -55,7 +58,7 @@ const Index = () => {
 
             <section className="logo-section">
                 <div className="container">
-                    <img src="Images/FINAL.png" alt="StudyPhora Logo" className="logo-image" />
+                <Image src="/Images/FINAL.png" alt="StudyPhora Logo" width={400} height={400} /> {/* Use Image for optimization */}
                     <h2 className="tagline">`Transforming Institutes, Transforming Future`</h2>
                 </div>
             </section>
@@ -112,7 +115,7 @@ const Index = () => {
             <section className="cta" id="contact">
                 <div className="container">
                     <h2>Get in Touch</h2>
-                    <p>Have questions or need assistance? Feel free to contact us. We're here to help!</p>
+                    <p>Have questions or need assistance? Feel free to contact us. We&apos;re here to help!</p>
                     <button onClick={openForm}>Contact Us</button>
                 </div>
             </section>
@@ -121,11 +124,11 @@ const Index = () => {
                 <div className="container">
                     <h2>What Our Students Say</h2>
                     <div className="testimonial">
-                        <p className="testimonial-text">"StudyPhora has truly revolutionized my approach to learning. The interactive lessons and supportive instructors have helped me excel in my studies."</p>
+                        <p className="testimonial-text">&quot;StudyPhora has truly revolutionized my approach to learning. The interactive lessons and supportive instructors have helped me excel in my studies.&quot;</p>
                         <p className="testimonial-author">John Doe</p>
                     </div>
                     <div className="testimonial">
-                        <p className="testimonial-text">"The personalized learning experience at StydyPhora has made all the difference in my academic journey. I highly recommend it to anyone seeking quality education."</p>
+                        <p className="testimonial-text">&quot;The personalized learning experience at StydyPhora has made all the difference in my academic journey. I highly recommend it to anyone seeking quality education.&quot;</p>
                         <p className="testimonial-author">Jane Smith</p>
                     </div>
                 </div>
