@@ -19,10 +19,6 @@ const Index = () => {
         document.body.classList.remove('decreased-light');
     };
 
-
-    const reloadWindow = () => {
-        window.location.reload();
-    };
     // Toggle the menu state
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -40,7 +36,7 @@ const Index = () => {
                         <span className="bar"></span>
                     </button>
                     <nav className={`${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
-                        <Link href="/" onClick={reloadWindow}>Home</Link>
+                        <Link href="/">Home</Link>
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
