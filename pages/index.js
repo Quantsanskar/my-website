@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import { useRouter } from 'next/router';
 import '../styles/MainPage.css'; // Import the CSS file
 import AdmissionForm from '../components/AdmissionForm';
+import Link from 'next/link'; // Import Link from next/link
+import Image from 'next/image'; // Import Image from next/image
 
 const Index = () => {
     const router = useRouter();
     const [isFormOpen, setIsFormOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Track the state of the menu
 
     const openForm = () => {
         setIsFormOpen(true);
@@ -18,30 +19,46 @@ const Index = () => {
         document.body.classList.remove('decreased-light');
     };
 
-    const handleNavigateToAandG = () => {
-        router.push('/home');
+    // Toggle the menu state
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
+
 
     return (
         <>
-            <header className="navbar">
+            <header className={`navbar ${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
                 <div className="container">
-                    <h1 className="logo">StudyPhora</h1>
-                    <nav>
-                        <a href="#home">Home</a>
+                    {/* <h1 onClick={()=> router.push('/')} className="logo">StudyPhora</h1> */}
+                    <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}> {/* Add active class when menu is open */}
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                    </button>
+                    <nav className={`${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
+                        <Link href="/">Home</Link>
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
+                        <Link href="/founders">Meet Our Founders</Link>
+                        <Link href="/teachers">Teachers</Link>
                         <div className="dropdown">
-                            <a href="#" className="dropbtn">Institutes</a>
+                            <Link href="#" className="dropbtn">Institutes</Link>
                             <div className="dropdown-content">
-                                <a onClick={handleNavigateToAandG}>A & G Academy</a>
-                                <a href="institute2.html">Institute 2</a>
+                                <Link href="/home" >A & G Academy</Link>
+                                <Link href="/Institute2">Institute 2</Link>
                             </div>
                         </div>
                     </nav>
                 </div>
             </header>
+
+            <section className="logo-section">
+                <div className="container">
+                <Image src="/Images/FINAL.png" alt="StudyPhora Logo" width={400} height={400} /> {/* Use Image for optimization */}
+                    <h2 className="tagline">`Transforming Institutes, Transforming Future`</h2>
+                </div>
+            </section>
 
             <section className="hero" id="home">
                 <div className="container">
@@ -95,7 +112,7 @@ const Index = () => {
             <section className="cta" id="contact">
                 <div className="container">
                     <h2>Get in Touch</h2>
-                    <p>Have questions or need assistance? Feel free to contact us. We're here to help!</p>
+                    <p>Have questions or need assistance? Feel free to contact us. We&apos;re here to help!</p>
                     <button onClick={openForm}>Contact Us</button>
                 </div>
             </section>
@@ -104,11 +121,11 @@ const Index = () => {
                 <div className="container">
                     <h2>What Our Students Say</h2>
                     <div className="testimonial">
-                        <p className="testimonial-text">"StudyPhora has truly revolutionized my approach to learning. The interactive lessons and supportive instructors have helped me excel in my studies."</p>
+                        <p className="testimonial-text">&quot;StudyPhora has truly revolutionized my approach to learning. The interactive lessons and supportive instructors have helped me excel in my studies.&quot;</p>
                         <p className="testimonial-author">John Doe</p>
                     </div>
                     <div className="testimonial">
-                        <p className="testimonial-text">"The personalized learning experience at StydyPhora has made all the difference in my academic journey. I highly recommend it to anyone seeking quality education."</p>
+                        <p className="testimonial-text">&quot;The personalized learning experience at StydyPhora has made all the difference in my academic journey. I highly recommend it to anyone seeking quality education.&quot;</p>
                         <p className="testimonial-author">Jane Smith</p>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ class StudentListAPIView(generics.ListCreateAPIView):
         return Student.objects.all()
 
 
-class TeacherListAPIView(generics.ListAPIView):
+class TeacherListAPIView(generics.ListCreateAPIView):
     serializer_class = TeacherSerializer
 
     def get_queryset(self):
@@ -112,21 +112,30 @@ class SendSMSView(APIView):
 
 
 class SendEmailView(APIView):
+
     def post(self, request):
-        message = request.data.get("message")
-        if message:
-            send_email(message)
-            return response.Response({"message": "SMS sent successfully"})
+        body = request.data.get("body")
+        name = request.data.get("name")
+        email = request.data.get("email")
+        phone = request.data.get("phone")
+        mail = f"Message: {body} sent from {name}, mobile number: {phone}, email: {email}"
+        if mail:
+            send_email(mail)
+            return response.Response({"message": "Email sent successfully"})
         else:
             return response.Response(
                 {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST
             )
 
     def get(self, request):
-        message = request.query_params.get("message")
-        if message:
-            send_email(message)
-            return response.Response({"message": "SMS sent successfully"})
+        body = request.query_params.get("body")
+        name = request.query_params.get("name")
+        email = request.query_params.get("email")
+        phone = request.query_params.get("phone")
+        mail = f"Message: {body} sent from {name}, mobile number: {phone}, email: {email}"
+        if mail:
+            send_email(mail)
+            return response.Response({"message": "Email sent successfully"})
         else:
             return response.Response(
                 {"error": "Invalid request data"}, status=status.HTTP_400_BAD_REQUEST

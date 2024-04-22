@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
 
                         You have the right to access, correct, or delete your personal information at any time. You may also opt out of receiving promotional communications from us by following the unsubscribe instructions provided in our emails.
 
-                        Children's Privacy
+                        Children&apos;s Privacy
 
                         Our services are not directed to individuals under the age of 13, and we do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can delete the information.
 

@@ -74,6 +74,8 @@ const AttendancePage = () => {
                             await sendSMS(student.mobile, message);
 
                             console.log(`Message sent to ${student.name}`);
+                            window.location.reload();
+
                         } else {
                             console.error(`Mobile number not found for student ${student.name}`);
                         }
