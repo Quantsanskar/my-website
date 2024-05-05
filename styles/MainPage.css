@@ -295,6 +295,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 3em;
+    min-width: 400px;
     margin-top: 60px;
     border-radius: 10px;
     animation: fadeIn 1s ease-in-out forwards;
@@ -317,6 +318,7 @@ body {
 .features {
     display: flex;
     justify-content: space-around;
+    min-width: 400px;
     flex-wrap: wrap;
     margin-top: 2em;
 }
@@ -349,6 +351,7 @@ body {
     background-color: #444;
     padding: 4em 0;
     text-align: center;
+    min-width: 400px;
 }
 
 .why-choose h2 {
@@ -381,6 +384,7 @@ body {
 /* Call to action section styles */
 .cta {
     background-color: #333;
+    min-width: 400px;
     color: #fff;
     text-align: center;
     padding: 1.5em;
@@ -413,6 +417,7 @@ body {
 .testimonial-section {
     text-align: center;
     padding: 3em 0;
+    min-width: 400px;
     background-color: #444;
     color: #fff;
 }
@@ -441,6 +446,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 3em;
+    min-width: 400px;
     margin-top: 2em;
     border-radius: 10px;
     animation: fadeIn 1s ease-in-out forwards;
@@ -606,6 +612,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 4em 0;
+    min-width: 400px;
 }
 
 .logo-image {
@@ -645,6 +652,7 @@ body {
 
 .tagline {
     font-size: 2.0em;
+    min-width:400px;
     text-align: center;
     font-family: cursive;
     color: gold;
