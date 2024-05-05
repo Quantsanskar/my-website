@@ -41,21 +41,16 @@ const Index = () => {
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
                         <Link href="/founders">Meet Our Founders</Link>
-                        <Link href="/teachers">Teachers</Link>
-                        <div className="dropdown">
-                            <Link href="#" className="dropbtn">Institutes</Link>
-                            <div className="dropdown-content">
-                                <Link href="/home" >A & G Academy</Link>
-                                <Link href="/Institute2">Institute 2</Link>
-                            </div>
-                        </div>
+                        <Link href="#">Institutes</Link>
+
+
                     </nav>
                 </div>
             </header>
 
             <section className="logo-section">
                 <div className="container">
-                <Image src="/Images/FINAL.png" alt="StudyPhora Logo" width={400} height={400} /> {/* Use Image for optimization */}
+                    <Image src="/Images/FINAL.png" alt="StudyPhora Logo" width={400} height={400} /> {/* Use Image for optimization */}
                     <h2 className="tagline">`Transforming Institutes, Transforming Future`</h2>
                 </div>
             </section>
