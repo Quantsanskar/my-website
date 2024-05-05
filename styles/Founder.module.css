@@ -1,3 +1,5 @@
+/* Common styles */
+
 .container {
     padding: 20px;
 }
@@ -6,12 +8,9 @@
 .cofounder {
     display: flex;
     align-items: center;
-    /* margin-bottom: 30px; */
     background-color: #f5f5f5;
     color: #333;
     padding: 20px;
-    /* border-radius: 10px; */
-    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .profile {
@@ -82,8 +81,6 @@
     background-color: #f5f5f5;
     color: #333;
     padding: 20px;
-    /* border-radius: 10px; */
-    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
 }
 
 /* Animated and Aesthetic Member Profile Styling */
@@ -171,7 +168,7 @@
 .member p {
     color: #777;
     /* Gray */
-    font-size:x-large;
+    font-size: x-large;
     transition: all 0.3s ease-in-out;
 }
 
@@ -179,7 +176,6 @@
     color: #888;
     /* Slightly darker gray */
 }
-
 
 .name {
     color: #007bff;
@@ -202,4 +198,56 @@
 .founder,
 .cofounder {
     animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+
+    .founder,
+    .cofounder {
+        display: block;
+        padding: 20px;
+    }
+
+    .profile {
+        
+        margin-left: 20%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .text {
+        margin-bottom: 20px;
+    }
+
+    .others {
+        padding: 20px;
+    }
+
+    .sectionTitle {
+        padding: 20px;
+    }
+
+    .headerTitle {
+        padding: 20px;
+    }
+
+    .member {
+        margin-bottom: 20px;
+    }
+
+    .memberProfile {
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member .profile {
+        margin-left: 0%;
+        width: 200px;
+        height: 200px;
+    }
 }
