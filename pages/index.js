@@ -40,7 +40,7 @@ const Index = () => {
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
-                        <Link href="/founders">Meet Our Founders</Link>
+                        <Link href="/founders">Our Team</Link>
                         <Link href="#">Institutes</Link>
 
 
