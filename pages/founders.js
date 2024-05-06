@@ -22,7 +22,10 @@ const Founder = () => {
                 </div>
                 <div className={styles.text}>
                     <h2 className={styles.name}>Apaar Dhangad</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at urna ac libero aliquet commodo. Nullam vehicula risus vel nisl tempus, ut aliquam mi consequat. Nulla facilisi.</p>
+                    <p> Meet Apaar, the visionary fabricator behind StudyPhora, an app that illuminates the path of numerous youngsters. 
+
+As a life long problem solver and tech enthusiast, I have dedicated myself to crafting an app that promises to transform the lives of the youngsters.
+You know, being a student can sometimes feel like yourself juggling a million of things at once, right? Well, that is exactly why we decided to create StudyPhora. It is like your ultimate study buddy. So, whether you are tackling tough assignments or prepping for exams, We have got your back. Let us make studying a whole lot easier, together. So lets embark on this journey together where innovation meets simplicity, and where every tap brings us closer to a brighter, more connected future. </p>
                 </div>
             </section>
 
