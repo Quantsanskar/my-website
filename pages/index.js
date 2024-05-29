@@ -35,16 +35,22 @@ const Index = () => {
                         <span className="bar"></span>
                         <span className="bar"></span>
                     </button>
-                    <nav className={`${isMenuOpen ? 'active' : ''}`}> {/* Add active class when menu is open */}
+                    <nav className={isMenuOpen ? 'active' : ''}>
                         <Link href="/">Home</Link>
                         <a href="#features">Features</a>
                         <a href="#why-choose">WhyUs</a>
                         <a href="#contact">Contact</a>
                         <Link href="/founders">Our Team</Link>
-                        <Link href="#">Institutes</Link>
-
-
+                        <div className="dropdown">
+                            <Link href="#">Institutes
+                            </Link>
+                            <div className="dropdown-content">
+                                <Link href="/home">A & G Academy
+                                </Link>
+                            </div>
+                        </div>
                     </nav>
+
                 </div>
             </header>
 
