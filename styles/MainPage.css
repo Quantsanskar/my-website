@@ -12,14 +12,18 @@ body {
 
 /* Navbar styles */
 .navbar {
-    position: fixed; /* Stick the navbar at the top */
-    top: 0; /* Align the navbar at the top of the page */
-    width: 100%; /* Occupy the full width of the viewport */
+    position: fixed;
+    /* Stick the navbar at the top */
+    top: 0;
+    /* Align the navbar at the top of the page */
+    width: 100%;
+    /* Occupy the full width of the viewport */
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 0.5em 0;
-    z-index: 1000; /* Ensure the navbar stays above other content */
+    z-index: 1000;
+    /* Ensure the navbar stays above other content */
 }
 
 
@@ -309,97 +313,96 @@ body {
         padding: 0 10px;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-.navbar .logo {
-    order: 2;
-    /* Move logo to the right */
-    font-size: 1.2em;
-    /* Adjusted font size */
-}
 
-.navbar a {
-    order: 1;
-    /* Move navbar links to the left */
-    padding: 10px;
-    /* Adjusted padding */
-    font-size: 0.9em;
-    display: none;
-    /* Hide navbar links by default */
-}
+    .navbar .logo {
+        order: 2;
+        /* Move logo to the right */
+        font-size: 1.2em;
+        /* Adjusted font size */
+    }
 
-.navbar .dropdown-content {
-    position: static;
-    /* Adjust position for dropdown content */
-    display: none;
-    width: auto;
-    background-color: transparent;
-    box-shadow: none;
-}
+    .navbar a {
+        order: 1;
+        /* Move navbar links to the left */
+        padding: 10px;
+        /* Adjusted padding */
+        font-size: 0.9em;
+        display: none;
+        /* Hide navbar links by default */
+    }
 
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
-}
+    .navbar .dropdown-content {
+        position: static;
+        /* Adjust position for dropdown content */
+        display: none;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+    }
 
-/* Show the hamburger menu button */
-.hamburger {
-    order: 1;
-    /* Move hamburger button to the left */
-    display: block;
-}
+    .navbar .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-/* Rotate bars to form an 'X' when menu is open */
-.hamburger.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
+    /* Show the hamburger menu button */
+    .hamburger {
+        order: 1;
+        /* Move hamburger button to the left */
+        display: block;
+    }
 
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
+    /* Rotate bars to form an 'X' when menu is open */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
 
-.hamburger.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
 
-/* Adjusted styles for small screens */
-.navbar {
-    flex-direction: row;
-    /* Stack items horizontally */
-    justify-content: space-between;
-    /* Adjusted alignment */
-    padding: 1em 20px;
-    /* Adjusted padding */
-    height: auto;
-    /* Set height to auto to accommodate content */
-}
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
 
-.navbar.active {
-    width: 100%;
-    /* Ensure navbar covers entire screen width */
-}
+    /* Adjusted styles for small screens */
+    .navbar {
+        flex-direction: row;
+        /* Stack items horizontally */
+        justify-content: space-between;
+        /* Adjusted alignment */
+        padding: 1em 20px;
+        /* Adjusted padding */
+        height: auto;
+        /* Set height to auto to accommodate content */
+    }
 
-.navbar.active a {
-    display: block;
-    /* Display links as block elements */
-    padding: 15px 20px;
-    /* Adjust padding */
-    text-align: left;
-    /* Align text to the left */
-}
+    .navbar.active {
+        width: 100%;
+        /* Ensure navbar covers entire screen width */
+    }
 
-.navbar.active .dropdown-content {
-    position: relative;
-    /* Restore default position */
-    display: none;
-    /* Hide dropdown content */
-    margin-left: 20px;
-    /* Add margin for proper spacing */
-}
+    .navbar.active a {
+        display: block;
+        /* Display links as block elements */
+        padding: 15px 20px;
+        /* Adjust padding */
+        text-align: left;
+        /* Align text to the left */
+    }
 
-.navbar.active .container {
-    align-items: flex-start;
-}
+    .navbar.active .dropdown-content {
+        position: relative;
+        /* Restore default position */
+        display: none;
+        /* Hide dropdown content */
+        margin-left: 20px;
+        /* Add margin for proper spacing */
+    }
+
+    .navbar.active .container {
+        align-items: flex-start;
+    }
 }
 
 .logo-section {
@@ -423,41 +426,37 @@ body {
 @keyframes pulse {
     0% {
         transform: scale(1);
-=======
-    .navbar .logo {
-        font-size: 1.2em;
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
-=======
-    .navbar .logo {
-        font-size: 1.2em;
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
-    }
 
-    .navbar a {
-        padding: 10px;
-        font-size: 0.9em;
-    }
 
-    .hero h1 {
-        font-size: 1.5em;
-    }
 
-    .hero p {
-        font-size: 1em;
-    }
+        .navbar .logo {
+            font-size: 1.2em;
+        }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+        .navbar a {
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        .hero h1 {
+            font-size: 1.5em;
+        }
+
+        .hero p {
+            font-size: 1em;
+        }
+
+    }
+}
+
 .tagline {
     font-size: 2.0em;
-    min-width:400px;
+    min-width: 400px;
     text-align: center;
     font-family: cursive;
     color: gold;
     animation: fadeIn 5s ease-in-out forwards;
-=======
-=======
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
+
     .feature {
         padding: 1.5em;
         margin: 1em 0;
@@ -491,8 +490,5 @@ body {
     .join-us button {
         padding: 0.8em 1.5em;
     }
-<<<<<<< HEAD
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
-=======
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
+
 }
