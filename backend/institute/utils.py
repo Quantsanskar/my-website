@@ -21,13 +21,13 @@ def send_sms(phone_number, message):
 
 def send_email(body):
     sender_email = "querysendersp@gmail.com"
-    receiver_email = "studyphora@gmail.com"
+    receiver_email = "sanskarsrdav@gmail.com"
     password = "ijslzduzbpbqciva"
 
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = receiver_email
-    message["Subject"] = "StudyPhora Contact Form Queries"
+    message["Subject"] = "Test Email from Python"
 
     message.attach(MIMEText(body, "plain"))
 

@@ -12,13 +12,13 @@ const TermsOfService = () => {
                     <p>
                         Welcome to A & G Academy!
 
-                        These terms of service (&quot;Terms&quot;) govern your access to and use of the A & G Academy website (the &quot;Service&quot;), operated by A & G Academy (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
+                        These terms of service ("Terms") govern your access to and use of the A & G Academy website (the "Service"), operated by A & G Academy ("us", "we", or "our").
 
                         By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, then you may not access the Service.
 
                         Content Usage
 
-                        The content provided on the Service, including but not limited to lectures, notes, tests, and any other educational materials (&quot;Content&quot;), is for personal and non-commercial use only. You may not distribute, modify, reproduce, or otherwise exploit the Content without prior written permission from A & G Academy.
+                        The content provided on the Service, including but not limited to lectures, notes, tests, and any other educational materials ("Content"), is for personal and non-commercial use only. You may not distribute, modify, reproduce, or otherwise exploit the Content without prior written permission from A & G Academy.
 
                         Prohibited Activities
 

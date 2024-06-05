@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// Mentors.js
+import React from 'react';
 import styles from './MentorsSection.module.css';
 
 const Mentors = () => {
-    const [teachers, setTeachers] = useState([]);
-
-    useEffect(() => {
-        const fetchTeachers = async () => {
-            try {
-                const response = await axios.get('http://127.0.0.1:8000/api/teacher');
-                const filteredTeachers = response.data.filter(teacher => teacher.institutes.includes('A&G Academy'));
-                setTeachers(filteredTeachers);
-            } catch (error) {
-                console.error('Error fetching teachers:', error);
-            }
-        };
-
-        fetchTeachers();
-    }, []);
+    const teachers = [
+        { id: 1, name: 'John Doe', subject: 'Mathematics', experience: '10 years' },
+        { id: 2, name: 'Jane Smith', subject: 'Physics', experience: '8 years' },
+        { id: 3, name: 'Alice Johnson', subject: 'Biology', experience: '12 years' },
+        // Add more teachers as needed
+    ];
 
     return (
         <div className={styles.mentors}>

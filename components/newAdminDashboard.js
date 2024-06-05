@@ -55,7 +55,7 @@ const AdminDashboard = () => {
           <ul className={styles.navbarList}>
             <li onClick={() => router.push('/attendance')}>Attendance</li>
             <li>Students List</li>
-            <li onClick={() => router.push("/mentorssection")}>Teachers List</li>
+            <li>Teachers List</li>
             <li onClick={()=> router.push('/AdminUploadMarks')}>Upload Marks</li>
             <button className={styles.navbarLogOutButton} onClick={handleLogout}>Log Out</button>
           </ul>
