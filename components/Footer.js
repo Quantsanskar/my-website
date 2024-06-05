@@ -2,7 +2,7 @@
 
 import {React} from 'react';
 import styles from '../styles/Footer.module.css';
-
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -10,10 +10,10 @@ const Footer = () => {
             <nav>
                 <ul className={styles.footerNav}>
                     <li className={styles.footerNavItem}>
-                        <a href="/terms" className={styles.footerNavLink}>Terms of Service</a>
+                        <Link href="/terms" className={styles.footerNavLink}>Terms of Service</Link>
                     </li>
                     <li className={styles.footerNavItem}>
-                        <a href="/privacy" className={styles.footerNavLink}>Privacy Policy</a>
+                        <Link href="/privacy" className={styles.footerNavLink}>Privacy Policy</Link>
                     </li>
                     
                     

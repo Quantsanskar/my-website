@@ -61,7 +61,7 @@ const StudentDashboard = () => {
         <AdmissionForm onClose={handleCloseAdmissionForm} />
       ) : (
         <div>
-          <StudentAboutSection />
+          {/* <StudentAboutSection /> */}
           <div ref={lecturesRef}>
             <LecturesSection />
           </div>

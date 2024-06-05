@@ -30,11 +30,11 @@ const MainPage = () => {
     };
     const toggleSignIn = () => {
         setIsSignInOpen(!isSignInOpen);
-      };
-    
-      const closeSignIn = () => {
+    };
+
+    const closeSignIn = () => {
         setIsSignInOpen(false);
-      };
+    };
 
     return (
         <ErrorBoundary>
@@ -44,7 +44,7 @@ const MainPage = () => {
                         <li key={item.id}>{item.name} - {item.description}</li>
                     ))}
                 </ul>
-                <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '999' }}>
+                <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: '999' }}>
                     <Link href="/" style={{ color: 'white', backgroundColor: 'burlywood', padding: '10px 20px', borderRadius: '5px', textDecoration: 'none' }}>
                         StudyPhora
                     </Link>
@@ -57,17 +57,27 @@ const MainPage = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
+                        textAlign: 'center',
+                        margin: 'auto', // Center the container horizontally
+                        maxWidth: '600px', // Limit the maximum width of the container
+                        padding: '0 20px', // Add some padding to the sides for spacing
                     }}
                 >
-                    <div style={{ marginBottom: '1rem' }}>
+                    <div style={{ marginBottom: '1rem', width: '100%' }}>
                         <HomePage />
                     </div>
-                    <AdmissionButton onClick={toggleAdmissionForm} />
-                    {/* Reactive element for sign-in */}
-                    <div style={{ marginTop: '1rem', cursor: 'pointer', color: 'blue' }} onClick={toggleSignIn}>
-                        Are you an existing student? Sign in here.
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%' }}>
+                        <div style={{ marginBottom: '1rem', width: '100%', maxWidth: '300px' }}>
+                            <AdmissionButton onClick={toggleAdmissionForm} />
+                        </div>
+                        {/* Reactive element for sign-in */}
+                        <div style={{ marginTop: '1rem', cursor: 'pointer', color: 'blue', width: '100%', maxWidth: '300px' }} onClick={toggleSignIn}>
+                            Are you an existing student? Sign in here.
+                        </div>
                     </div>
-                    
+
+
+
                 </div>
 
                 <div id="location">
@@ -79,7 +89,7 @@ const MainPage = () => {
                 <Footer />
                 <SignInForm isSignInOpen={isSignInOpen} closeSignIn={closeSignIn} />
                 {showAdmissionForm && <AdmissionForm onClose={toggleAdmissionForm} />}
-                
+
             </div>
         </ErrorBoundary>
     );
