@@ -310,7 +310,6 @@ body {
     }
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 .navbar .logo {
     order: 2;
@@ -427,10 +426,6 @@ body {
     .navbar .logo {
         font-size: 1.2em;
 >>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
-=======
-    .navbar .logo {
-        font-size: 1.2em;
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
     }
 
     .navbar a {
@@ -447,7 +442,6 @@ body {
     }
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 .tagline {
     font-size: 2.0em;
     min-width:400px;
@@ -456,8 +450,6 @@ body {
     color: gold;
     animation: fadeIn 5s ease-in-out forwards;
 =======
-=======
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
     .feature {
         padding: 1.5em;
         margin: 1em 0;
@@ -491,8 +483,5 @@ body {
     .join-us button {
         padding: 0.8em 1.5em;
     }
-<<<<<<< HEAD
->>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
-=======
 >>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
 }
