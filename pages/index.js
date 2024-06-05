@@ -27,6 +27,7 @@ const Index = () => {
             <header className="navbar">
                 <div className="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     {/* <h1 onClick={()=> router.push('/')} className="logo">StudyPhora</h1> */}
                     <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}> {/* Add active class when menu is open */}
                         <span className="bar"></span>
@@ -58,6 +59,19 @@ const Index = () => {
                                 <a onClick={handleNavigateToAandG}>A & G Academy</a>
                                 <a href="institute2.html">Institute 2</a>
 >>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
+=======
+                    <h1 className="logo">StudyPhora</h1>
+                    <nav>
+                        <a href="#home">Home</a>
+                        <a href="#features">Features</a>
+                        <a href="#why-choose">WhyUs</a>
+                        <a href="#contact">Contact</a>
+                        <div className="dropdown">
+                            <a href="#" className="dropbtn">Institutes</a>
+                            <div className="dropdown-content">
+                                <a onClick={handleNavigateToAandG}>A & G Academy</a>
+                                <a href="institute2.html">Institute 2</a>
+>>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
                             </div>
                         </div>
                     </nav>
@@ -66,6 +80,7 @@ const Index = () => {
             </header>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             <section className="logo-section">
                 <div className="container">
                     <Image src="/Images/FINAL.png" alt="StudyPhora Logo" width={400} height={400} /> {/* Use Image for optimization */}
@@ -73,6 +88,8 @@ const Index = () => {
                 </div>
             </section>
 
+=======
+>>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
 =======
 >>>>>>> parent of 495c314 (Merge branch 'current-branch' of https://github.com/Quantsanskar/my-website into current-branch)
             <section className="hero" id="home">
